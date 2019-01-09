@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 10m风调色板，风小于4级（即风速小于5.5m/s）不显示，处理为透明 -->
+<palette>
+	<entry value="5.5" rgba="255, 255, 255, 180" />
+	<entry value="8.0" rgba="102, 255, 153, 180" />
+	<entry value="10.8" rgba="102, 255, 0, 180" />
+	<entry value="13.9" rgba="51, 204, 0, 180" />
+	<entry value="17.2" rgba="255, 255, 0, 180" />
+	<entry value="20.8" rgba="255, 204, 0, 180" />
+	<entry value="24.5" rgba="255, 153, 0, 180" />
+	<entry value="28.5" rgba="204, 51, 0, 180" />
+	<entry value="32.7" rgba="153, 51, 0, 180" />
+</palette>

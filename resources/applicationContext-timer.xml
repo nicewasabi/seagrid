@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:s="http://www.springframework.org/schema/security" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                        http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.0.xsd"
+	default-lazy-init="true">
+	
+	<bean id="myTimerMonitor" class="com.webyun.seagrid.monitor.task.Monitor"/>
+	
+	<bean id="timeMonitorIsLate00" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="myTimerMonitor"></property>
+		<property name="targetMethod" value="isLate00">
+			
+		</property>
+	</bean>
+  
+	
+	<bean id="timeMonitorIsLate12" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="myTimerMonitor"></property>
+		<property name="targetMethod" value="isLate12">
+			
+		</property>
+	</bean>
+	
+	<bean id="timeMonitorDownloadNoSuccess" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="myTimerMonitor"></property>
+		<property name="targetMethod" value="downloadNoSuccess">
+			
+		</property>
+	</bean>
+	
+	<bean id="timeTriggerMonitorIsLate12" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="timeMonitorIsLate12"></property>
+		<property name="cronExpression">
+			<value>0 58 03 * * ?</value>
+		</property>
+	</bean>
+	
+	<bean id="timeTriggerMonitorIsLate00" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="timeMonitorIsLate00"></property>
+		<property name="cronExpression">
+			<value>0 15 00 * * ?</value>
+		</property>
+	</bean>
+	
+	<bean id="timeTriggerMonitorDownloadNoSuccess" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="timeMonitorDownloadNoSuccess"></property>
+		<property name="cronExpression">
+			<value>* * */2 * * ?</value>
+		</property>
+	</bean>
+	
+	<!-- shell entity -->
+	<bean id="myTimerShell" class="com.webyun.seagrid.monitor.task.ShellTask"/>
+	<!-- wamhres start -->
+	<bean id="timeTriggerShellWamhres12" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="timeMonitorWamhres12"></property>
+		<property name="cronExpression">
+			<value>0 58 03 * * ?</value>
+		</property>
+	</bean>
+		<bean id="timeMonitorWamhres12" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="myTimerShell"></property>
+		<property name="targetMethod" value="Wamhres12">
+			
+		</property>
+	</bean>
+	
+		<bean id="timeTriggerShellWamhres00" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="timeMonitorWamhres00"></property>
+		<property name="cronExpression">
+			<value>0 32 3 * * ?</value>
+		</property>
+	</bean>
+		<bean id="timeMonitorWamhres00" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="myTimerShell"></property>
+		<property name="targetMethod" value="Wamhres00">
+			
+		</property>
+	</bean>
+	<!-- wamhres end -->
+	<!-- hres start -->
+		
+	<bean id="timeTriggerShellHres12" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="timeMonitorHres12"></property>
+		<property name="cronExpression">
+			<value>0 56 03 * * ?</value>
+		</property>
+	</bean>
+		<bean id="timeMonitorHres12" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="myTimerShell"></property>
+		<property name="targetMethod" value="hres12">
+			
+		</property>
+	</bean>
+	
+		<bean id="timeTriggerShellHres00" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="timeMonitorHres00"></property>
+		<property name="cronExpression">
+			<value>0 34 0 * * ?</value>
+			<!-- <value>0 47 9 * * ?</value> -->
+		</property>
+	</bean>
+		<bean id="timeMonitorHres00" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="myTimerShell"></property>
+		<property name="targetMethod" value="hres00">
+			
+		</property>
+	</bean>
+	<!-- hres end -->
+	
+	<!-- nc china start -->
+	<bean id="timeTriggerShell_ncProcess_china_001" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="timeMonitor_ncProcess_china_001"></property>
+		<property name="cronExpression">
+			<value>0 34 04,07 * * ?</value>
+		</property>
+	</bean>
+		<bean id="timeMonitor_ncProcess_china_001" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="myTimerShell"></property>
+		<property name="targetMethod" value="ncProcess_china_001">
+		</property>
+	</bean>
+	
+		<bean id="timeTriggerShell_ncProcess_china_024" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="timeMonitor_ncProcess_china_024"></property>
+		<property name="cronExpression">
+			<value>0 03 05,08 * * ?</value>
+		</property>
+	</bean>
+		<bean id="timeMonitor_ncProcess_china_024" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="myTimerShell"></property>
+		<property name="targetMethod" value="ncProcess_china_024">
+		</property>
+	</bean>
+	
+		<bean id="timeTriggerShell_ncProcess_china_048" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="timeMonitor_ncProcess_china_048"></property>
+		<property name="cronExpression">
+			<value>0 34 05,08 * * ?</value>
+		</property>
+	</bean>
+		<bean id="timeMonitor_ncProcess_china_048" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="myTimerShell"></property>
+		<property name="targetMethod" value="ncProcess_china_048">
+		</property>
+	</bean>
+	
+	<!-- 072 start  -->
+		<bean id="timeTriggerShell_ncProcess_china_072" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="timeMonitor_ncProcess_china_072"></property>
+		<property name="cronExpression">
+			<value>0 03 06,09 * * ?</value>
+		</property>
+	</bean>
+		<bean id="timeMonitor_ncProcess_china_072" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="myTimerShell"></property>
+		<property name="targetMethod" value="ncProcess_china_072">
+		</property>
+	</bean>
+	<!-- 096 start  -->
+		<bean id="timeTriggerShell_ncProcess_china_096" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="timeMonitor_ncProcess_china_096"></property>
+		<property name="cronExpression">
+			<value>0 48 06,09 * * ?</value>
+		</property>
+	</bean>
+		<bean id="timeMonitor_ncProcess_china_096" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="myTimerShell"></property>
+		<property name="targetMethod" value="ncProcess_china_096">
+		</property>
+	</bean>
+	<!-- 120 start -->
+		<bean id="timeTriggerShell_ncProcess_china_120" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="timeMonitor_ncProcess_china_120"></property>
+		<property name="cronExpression">
+			<value>0 17 07,10 * * ?</value>
+		</property>
+	</bean>
+		<bean id="timeMonitor_ncProcess_china_120" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="myTimerShell"></property>
+		<property name="targetMethod" value="ncProcess_china_120">
+		</property>
+	</bean>
+	<!-- nc china end -->
+	
+		<!-- nc china start -->
+	<bean id="timeTriggerShell_ncProcess_global_001" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="timeMonitor_ncProcess_global_001"></property>
+		<property name="cronExpression">
+			<value>0 46 04,07 * * ?</value>
+		</property>
+	</bean>
+		<bean id="timeMonitor_ncProcess_global_001" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="myTimerShell"></property>
+		<property name="targetMethod" value="ncProcess_global_001">
+		</property>
+	</bean>
+	
+		<bean id="timeTriggerShell_ncProcess_global_024" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="timeMonitor_ncProcess_global_024"></property>
+		<property name="cronExpression">
+			<value>0 17 05,08 * * ?</value>
+		</property>
+	</bean>
+		<bean id="timeMonitor_ncProcess_global_024" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="myTimerShell"></property>
+		<property name="targetMethod" value="ncProcess_global_024">
+		</property>
+	</bean>
+	
+		<bean id="timeTriggerShell_ncProcess_global_048" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="timeMonitor_ncProcess_global_048"></property>
+		<property name="cronExpression">
+			<value>0 47 05,08 * * ?</value>
+		</property>
+	</bean>
+		<bean id="timeMonitor_ncProcess_global_048" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="myTimerShell"></property>
+		<property name="targetMethod" value="ncProcess_global_048">
+		</property>
+	</bean>
+	
+	<!-- 072 start  -->
+		<bean id="timeTriggerShell_ncProcess_global_072" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="timeMonitor_ncProcess_global_072"></property>
+		<property name="cronExpression">
+			<value>0 17 06,09 * * ?</value>
+		</property>
+	</bean>
+		<bean id="timeMonitor_ncProcess_global_072" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="myTimerShell"></property>
+		<property name="targetMethod" value="ncProcess_global_072">
+		</property>
+	</bean>
+	<!-- 096 start  -->
+		<bean id="timeTriggerShell_ncProcess_global_096" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="timeMonitor_ncProcess_global_096"></property>
+		<property name="cronExpression">
+			<value>0 47 06,09 * * ?</value>
+		</property>
+	</bean>
+		<bean id="timeMonitor_ncProcess_global_096" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="myTimerShell"></property>
+		<property name="targetMethod" value="ncProcess_global_096">
+		</property>
+	</bean>
+	<!-- 120 start -->
+		<bean id="timeTriggerShell_ncProcess_global_120" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="timeMonitor_ncProcess_global_120"></property>
+		<property name="cronExpression">
+			<value>0 17 07,10 * * ?</value>
+		</property>
+	</bean>
+		<bean id="timeMonitor_ncProcess_global_120" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="myTimerShell"></property>
+		<property name="targetMethod" value="ncProcess_global_120">
+		</property>
+	</bean>
+	<!-- nc china end -->
+	
+	<!-- get nc data start-->
+	<bean id="timeTriggerShellRtofs" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="timeMonitorRtofs"></property>
+		<property name="cronExpression">
+			<value>0 30 0 * * ?</value>
+			<!-- <value>0 10 14 * * ?</value> -->
+		</property>
+	</bean>
+		<bean id="timeMonitorRtofs" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="myTimerShell"></property>
+		<property name="targetMethod" value="getNcData">
+		</property>
+	</bean>
+	<!-- get nc data end -->
+	
+	<bean id="startJob" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<!-- 风和浪原数据抓取监控，00和12时次 -->
+				<ref bean="timeTriggerMonitorIsLate00"/>
+				<ref bean="timeTriggerMonitorIsLate12"/>
+				
+				<!-- 浪原数据解析监控，00和12时次 -->
+				<ref bean="timeTriggerShellWamhres12"/>
+				<ref bean="timeTriggerShellWamhres00"/>
+				
+				<!-- 风原数据解析监控，00和12时次 -->
+				<ref bean="timeTriggerShellHres12"/>
+				<ref bean="timeTriggerShellHres00"/>
+				
+				<!-- 洋流原数据抓取监控，00和12时次 -->
+				<ref bean="timeTriggerShellRtofs"/>
+				
+				<!-- <ref bean="timeTriggerShell_ncProcess_china_001"/>
+				<ref bean="timeTriggerShell_ncProcess_china_024"/>
+				<ref bean="timeTriggerShell_ncProcess_china_048"/>
+				<ref bean="timeTriggerShell_ncProcess_china_072"/>
+				<ref bean="timeTriggerShell_ncProcess_china_096"/>
+				<ref bean="timeTriggerShell_ncProcess_china_120"/>
+				
+				<ref bean="timeTriggerShell_ncProcess_global_001"/>
+				<ref bean="timeTriggerShell_ncProcess_global_024"/>
+				<ref bean="timeTriggerShell_ncProcess_global_048"/>
+				<ref bean="timeTriggerShell_ncProcess_global_072"/>
+				<ref bean="timeTriggerShell_ncProcess_global_096"/>
+				<ref bean="timeTriggerShell_ncProcess_global_120"/> -->
+				
+				<!-- <ref bean="timeTriggerMonitorDownloadNoSuccess"/> -->
+			</list>
+		</property>
+	</bean>
+</beans>

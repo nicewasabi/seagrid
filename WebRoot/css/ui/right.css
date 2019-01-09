@@ -1,0 +1,240 @@
+.under-map {
+  height: 370px;
+  margin-top: 15px;
+}
+#alarmsBlock,
+#specialColumnsBlock {
+  float: left;
+  width: 50%;
+}
+#alarmsBlock .btitle {
+  margin-right: 20px;
+}
+#alarmsBlock .btitle label {
+  background: url("images/warning-card.png") left center no-repeat;
+}
+#alarmsBlock .btitle a {
+  float: right;
+  line-height: 24px;
+  margin-right: .5em;
+  color: #9b9b9b;
+}
+#provinceAlarmList {
+  margin-top: 10px;
+}
+#provinceAlarmList ul {
+  margin-right: 12px;
+}
+#provinceAlarmList li {
+  height: 40px;
+  white-space: nowrap;
+}
+#provinceAlarmList li .alarm-image {
+  height: 24px;
+  width: 32px;
+  vertical-align: middle;
+  float: left;
+}
+#provinceAlarmList li a {
+  font-size: 14px;
+  vertical-align: middle;
+}
+#provinceAlarmList li .alarm-caption {
+  margin-left: 1em;
+  color: #333;
+  width: 300px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: inline-block;
+  float: left;
+}
+#provinceAlarmList li .alarm-time {
+  float: right;
+  color: #777;
+  margin-right: 1em;
+}
+#specialColumnsBlock .btitle > label > span {
+  padding-left: 1.5em;
+}
+#specialColumns > div {
+  position: relative;
+  float: left;
+  width: 47%;
+  height: 135px;
+  margin-top: 15px;
+  background-size: cover;
+}
+#specialColumns > div:nth-child(2n) {
+  margin-left: 4%;
+}
+#specialColumns > div > a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+#specialColumns > div:hover .special-column-shade {
+  display: block;
+}
+#specialColumns .div1 {
+  background-image: url(images/bg1.png);
+}
+#specialColumns .div1 > a {
+  background: url(images/bg11.png) center 30px no-repeat;
+}
+#specialColumns .div2 {
+  background-image: url(images/bg2.png);
+}
+#specialColumns .div3 {
+  background-image: url(images/bg3.png);
+}
+#specialColumns .div4 {
+  background-image: url(images/bg4.png);
+}
+#specialColumns .div4 > a {
+  background: url(images/bg14.png) center 30px no-repeat;
+}
+#specialColumns .special-column-caption {
+  margin-top: 85px;
+  margin-left: 30%;
+  height: 25px;
+  width: 40%;
+  padding: 2px;
+  text-align: center;
+  letter-spacing: .2em;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+#specialColumns .special-column-caption2 {
+  margin-top: 85px;
+  margin-left: 20%;
+  margin-right: 20%;
+  padding: 2px;
+  height: 25px;
+  text-align: center;
+  letter-spacing: .2em;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+#specialColumns .special-column-shade {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('images/map_img_title_bg.png');
+  text-align: center;
+}
+#specialColumns .special-column-shade span {
+  position: relative;
+  top: 45%;
+  padding: 7px 15px;
+  color: white;
+  background-color: #1a96dd;
+}
+#productShowBlock .btitle > label > span {
+  padding-left: 1.5em;
+  background: url(images/four-leaf.png) left center no-repeat;
+}
+#map_img_news {
+  border: 1px solid #ededed;
+  padding-top: 10px;
+  overflow: hidden;
+}
+.map_img_news {
+  width: 31%;
+  float: left;
+  margin-left: 1%;
+  margin-right: 1%;
+  margin-bottom: 10px;
+}
+.map_img_news:nth-child(3n) {
+  margin-right: 0;
+}
+.map_img {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 228px;
+}
+.map_img a:hover img {
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  transform: scale(1.2);
+  opacity: 0.8;
+  transition: opacity 0.3s ease-out 0s;
+}
+.map_img_title {
+  width: 100%;
+  height: 24px;
+  background: url('images/map_img_title_bg.png');
+  position: absolute;
+  left: 0;
+  top: 202px;
+}
+.map_img_title span {
+  font-family: "Microsoft YaHei";
+  font-size: 13px;
+  color: #fff;
+  line-height: 24px;
+  margin-left: 10px;
+}
+.map_img_desc {
+  height: 55px;
+  padding: 5px 10px;
+  overflow: hidden;
+  font-family: "Microsoft YaHei";
+  font-size: 12px;
+  color: #999;
+}
+.map_img_detail {
+  text-align: right;
+  padding: 5px 10px;
+  color: #999;
+}
+.map_img_detail a {
+  color: #3e3e3e;
+}
+/* @media screen and (max-width: 1080px) {
+  .productRightList ul li a {
+    margin-left: 30px;
+    margin-top: -25px;
+  }
+  .productList ul li {
+    width: 31%;
+  }
+  .news_brief p {
+    line-height: 20px;
+  }
+  .map_img_news {
+    width: 30%;
+    border: 1px solid #ededed;
+    float: left;
+    margin-right: 8px;
+    margin-bottom: 10px;
+  }
+} */
+/* @media screen and (max-width: 960px) {
+  .productRightList ul li a {
+    width: 230px;
+    margin-left: 0;
+    margin-top: 0;
+  }
+  .news_brief p {
+    line-height: 16px;
+  }
+}
+ */
+.div_oneline {display: block;margin-bottom: 3px;width: 100%;text-align: left;font-size: 13px;}
+.div_border {border: 1px solid #CCC; display: inline-block; padding: 3px 2px;}
+/*******************以下css为通用控件样式，高度为25px*********************************/
+.btn {padding: 2px 5px;height:25px;vertical-align: baseline;border-radius: 3px;font-size: 13px;}
+.input_text{height: 21px;border-width: 1px;padding: 1px 0px;}
+/****************************************************/

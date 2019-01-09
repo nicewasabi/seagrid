@@ -1,0 +1,159 @@
+#headerContainer {
+	height: 70px;
+	margin: 0 20px;
+	background: url("../../images/ui/head.jpg") no-repeat;
+	background-color: #5588CA;
+}
+
+#headerContainer #header {
+	height: 70px;
+	position: absolute;
+	top: 0;
+	z-index: 199;
+}
+
+#headerContainer #navMenu {
+	z-index: 8999;
+	float: left;
+	height: 62px;
+	right: 10px;
+	position: absolute;
+	top: 0;
+	width: 79%;
+}
+
+#headerContainer #navMenu .root {
+	height: 62px;
+	padding-top: 0;
+	line-height: 62px;
+}
+
+.root>li {
+	position: relative;
+	float: left;
+	width: 15%;
+	height: 62px;
+	padding: 0;
+	margin: 0;
+	background: url("../ui/images/fenge.png") no-repeat right center;
+}
+
+.root>li:last-child {
+	background: none;
+}
+
+.root>li:hover>a {
+	color: #474747;
+	background: url("../ui/images/tops.png") no-repeat center;
+}
+
+.root>li>a {
+	position: absolute;
+	left: -2px;
+	z-index: 10;
+	display: block;
+	width: 100%;
+	color: #ffffff;
+	font-size: 16px;
+	font-weight: bold;
+	text-align: center;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.dropdown-menu {
+	position: absolute;
+	display: none;
+	background: #fff;
+	border: 1px solid #dadada;
+}
+
+.dropdown-menu>li {
+	position: relative;
+	width: 219px;
+	height: 31px;
+	padding: 0;
+	margin: 0;
+	line-height: 31px;
+	background: none;
+}
+
+.dropdown-menu>li>a {
+	display: block;
+	padding-left: 25px;
+	color: #000;
+	font-weight: normal;
+	border-bottom: 1px dotted #dadada;
+	font-size: 14px;
+}
+
+.dropdown-menu>li>a:hover {
+	color: #1365ab;
+	background: #ededed;
+}
+
+.wodry {
+	display: inline-block;
+	width: 100%;
+	color: #ff8500;
+}
+
+#navMenu {
+	
+}
+
+#navMenu .menu2 {
+	top: 62px;
+	left: -2px;
+	z-index: 2;
+}
+
+#navMenu .menu3 {
+	top: 0;
+	left: 219px;
+}
+
+#navMenu li:hover>.menu2,#navMenu li:hover>.menu3 {
+	display: block;
+}
+
+#navMenu .menu2>li.existsub:hover {
+	width: 216px;
+	border-right: 3px solid #1a96dd;
+}
+
+.root {
+	margin-left: 120px;
+}
+
+@media screen and (max-width: 1080px) {
+	.root>li {
+		width: 8%;
+	}
+	.root>li>a {
+		width: 71px;
+		font-size: 12px;
+	}
+	#headerContainer #logo {
+		background-size: 90%;
+		width: 164px;
+	}
+	.noticeList {
+		width: 95%;
+	}
+}
+
+@media screen and (max-width: 960px) {
+	.root>li {
+		width: 60px;
+	}
+	.root>li>a {
+		width: 65px;
+	}
+}
+
+/* @media screen and (max-width: 1280px) {
+	#header {
+		width: 1260px;
+	}
+} */

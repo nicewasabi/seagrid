@@ -1,0 +1,169 @@
+.leftContents {
+  width: 100%;
+  color: #000;
+}
+.leftContents #headlines {
+  max-height: 240px;
+  padding-right: 10px;
+}
+.leftContents #headlines li a {
+  padding-left: 10px;
+  color: #333;
+}
+.leftContents #headlines li a:hover {
+  color: #1365ab;
+  font-weight: bold;
+}
+.leftContents .accordion {
+  width: 100%;
+  margin-top: 10px;
+  font-family: 'Microsoft YaHei';
+}
+.leftContents .accordion .btitle {
+  margin-top: 5px;
+}
+.leftContents .contentsList {
+  background: #ffffff;
+  padding: 0 0 0 0;
+  border: 1px solid #ededed;
+  font-size: 12px;
+}
+.leftContents .contentsList span {
+  width: 43%;
+  display: inline-block;
+  line-height: 22px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  color: #000;
+  font-size: 12.5px;
+  padding: 2px 0 2px 10px;
+}
+.leftContents .contents span {
+  width: 43%;
+  display: inline-block;
+  line-height: 22px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  color: #000;
+  font-size: 12.5px;
+  padding: 2px 0 2px 10px;
+}
+.leftContents #contentsList2 span a:hover {
+  background: #35b4f7;
+  color: #fff;
+  font-size: 12px;
+}
+.leftContents #contentsList3 span a:hover {
+  background: #35b4f7;
+  font-size: 12px;
+  color: #fff;
+}
+.leftContents #contentsList4 span a:hover {
+  background: #35b4f7;
+  font-size: 12px;
+  color: #fff;
+}
+.leftContents #contentsList5 span a:hover {
+  background:#35b4f7;
+  font-size: 12px;
+  color: #fff;
+}
+.leftContents #contentsList6 span a:hover {
+  background: #009b86;
+  font-size: 12px;
+  color: #fff;
+}
+.leftContents #contentsList7 span a:hover {
+  background: #7165d0;
+  font-size: 12px;
+  color: #fff;
+}
+.leftContents .list {
+  width: 85px;
+  display: inline-block;
+  line-height: 27px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  color: #000;
+  margin-right: 10px;
+  font-size: 13px;
+}
+.leftContents .contents span a {
+  color: #000;
+  padding: 2px;
+}
+.leftContents .contentsList span a {
+  color: #000;
+  padding: 2px;
+}
+.leftContents .contents0 span a:hover {
+  color: #ffffff;
+  background: #35b4f7;
+}
+.leftContents .contents1 span a:hover {
+  color: #ffffff;
+  background:#35b4f7;
+}
+.leftContents .borderLine {
+  width: 220px;
+  border-top: 1px solid #cddae3;
+  display: inline-block;
+  float: right;
+  margin-top: 17px;
+  margin-right: 20px;
+}
+.leftContents .gengduo {
+  color: #000;
+  font-size: 18px;
+  float: right;
+  height: 49px;
+  line-height: 49px;
+}
+@media screen and (max-width: 1280px) {
+  .icontitle {
+    width: 24%;
+    text-align: center;
+  }
+  .leftContents .contents span {
+    width: 28%;
+  }
+  .leftContents .contentsList span {
+    width: 28%;
+  }
+}
+@media screen and (max-width: 1080px) {
+  .leftContents .contents span {
+    width: 27%;
+  }
+  .leftContents .contentsList span {
+    width: 27%;
+  }
+  .icontitle {
+    width: auto;
+    margin-left: 3px;
+  }
+  .leftContents .recmond {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 960px) {
+  .contents span {
+    width: 25%;
+  }
+  .contentsList span {
+    width: 25%;
+  }
+  .img {
+    height: 30px;
+    width: 16%;
+  }
+  .img1,
+  .img2,
+  .img3,
+  .img4 {
+    background-size: 100%;
+  }
+}

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:s="http://www.springframework.org/schema/security" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+						http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                        http://www.springframework.org/schema/security 
+                        http://www.springframework.org/schema/security/spring-security-3.0.xsd"
+	default-lazy-init="true">
+  	
+	<!-- GrADS实时10米平均风预报数据处理定时任务 -->
+	<bean id="actual10mAvgWindProcess" class="com.webyun.seagrid.common.quartz.Actual10mAvgWindHandler"></bean>
+	<!-- 00时次处理任务 -->
+	<bean id="actual10mAvgWind00JobDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="actual10mAvgWindProcess"/>
+		<property name="targetMethod" value="windProcess_00"/>
+	</bean>
+	<bean id="actual10mAvgWind00JobTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="actual10mAvgWind00JobDetail"/>
+		<property name="cronExpression">
+			<!-- 每天早上6点执行一次 -->
+			<value>0 0 6 * * ?</value>
+		</property>
+	</bean>
+	<!-- 12时次处理任务 -->
+	<bean id="actual10mAvgWind12JobDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="actual10mAvgWindProcess"/>
+		<property name="targetMethod" value="windProcess_12"/>
+	</bean>
+	<bean id="actual10mAvgWind12JobTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="actual10mAvgWind12JobDetail"/>
+		<property name="cronExpression">
+			<!-- 每天早上6点40分执行一次 -->
+			<value>0 40 6 * * ?</value>
+		</property>
+	</bean>
+	
+	<!-- GrADS实时10米阵风预报数据处理定时任务 -->
+	<bean id="actual10mMaxWindProcess" class="com.webyun.seagrid.common.quartz.Actual10mMaxWindHandler"></bean>
+	<!-- 00时次处理任务 -->
+	<bean id="actual10mMaxWind00JobDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="actual10mMaxWindProcess"/>
+		<property name="targetMethod" value="windProcess_00"/>
+	</bean>
+	<bean id="actual10mMaxWind00JobTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="actual10mMaxWind00JobDetail"/>
+		<property name="cronExpression">
+			<!-- 每天早上7点5分执行一次 -->
+			<value>0 5 7 * * ?</value>
+		</property>
+	</bean>
+	<!-- 12时次处理任务 -->
+	<bean id="actual10mMaxWind12JobDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="actual10mMaxWindProcess"/>
+		<property name="targetMethod" value="windProcess_12"/>
+	</bean>
+	<bean id="actual10mMaxWind12JobTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="actual10mMaxWind12JobDetail"/>
+		<property name="cronExpression">
+			<!-- 每天早上7点15分执行一次 -->
+			<value>0 15 7 * * ?</value>
+		</property>
+	</bean>
+	
+	<!-- 启动定时器 -->
+	<bean id="startJob2" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<ref bean="actual10mAvgWind00JobTrigger"/>
+				<ref bean="actual10mAvgWind12JobTrigger"/>
+				<ref bean="actual10mMaxWind00JobTrigger"/>
+				<ref bean="actual10mMaxWind12JobTrigger"/>
+			</list>
+		</property>
+	</bean>
+	
+</beans>

@@ -1,0 +1,444 @@
+.switch {
+  margin-left: 10px;
+}
+.switch .case > input[type="radio"] {
+  display: none;
+}
+.switch .case:not(:first-of-type) > .text {
+  border-left: none;
+}
+.switch .text {
+  display: inline-block;
+  padding: 0 3px;
+  line-height: 18px;
+  text-align: center;
+  background-color: #fff;
+  border: 1px solid #bbb;
+  cursor: pointer;
+}
+.switch input:checked + .text {
+  color: white;
+  background-color: #1a96dd;
+}
+#mapContainer {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+#mapContainer.fullscreen {
+  width: 100%;
+  height: 100%;
+}
+#map,
+#ctrls {
+  height: 100%;
+  width: 100%;
+}
+#map {
+  z-index: 0;
+}
+#map .leaflet-popup-content-wrapper {
+  padding: 0;
+  border-radius: 0;
+}
+#map .leaflet-popup-content {
+  margin: 0;
+  color: #FFF;
+  background-color: #465996;
+}
+#map .leaflet-popup-content .popup-title {
+  height: 30px;
+  padding: 0px 20px 0px 10px;
+  margin: 0px;
+  line-height: 30px;
+  font-weight: bold;
+  background-color: #372D83;
+}
+#map .leaflet-popup-content .popup-table-container {
+  padding: 5px 10px;
+}
+#map .leaflet-popup-content .popup-table-container .more {
+  height: 1em;
+  margin-top: -5px;
+}
+#map .leaflet-popup-content .popup-table-container .more a {
+  float: right;
+  color: red;
+}
+#map .leaflet-popup-content .popup-table td {
+  border: none;
+}
+#map .leaflet-popup-content .popup-table td:first-child {
+  white-space: nowrap;
+  text-align: right;
+}
+#map .leaflet-popup-tip-container {
+  display: none;
+}
+#map .stw-rain-val {
+  position: absolute;
+  top: -5px;
+  left: 13px;
+  display: none;
+  font-weight: bold;
+  text-shadow: 2px 0px 0px white, -2px 0px 0px white, 0px 2px 0px white, 0px -2px 0px white;
+}
+#map .stw-rain-val-shown .stw-rain-val {
+  display: block;
+}
+#map .w-iconfont {
+  border-radius: 100%;
+  border: 1px solid #333;
+  background-color: #333;
+}
+#map .w-icon {
+  position: relative;
+  top: -34px;
+  left: 2px;
+  transform-origin: left bottom;
+  margin: 0;
+  text-align: start;
+  width: auto;
+}
+#map .w-icon:before {
+  position: relative;
+  left: -5px;
+  bottom: -2px;
+}
+#map .labeltable tr td {
+  border: none;
+}
+#map .labeltable tr td.lable {
+  white-space: nowrap;
+}
+.leaflet-container a.leaflet-popup-close-button {
+  color: #fff;
+  padding-top: 7px;
+}
+#ctrls {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+#resetView {
+  position: absolute;
+  top: 70px;
+  left: 10px;
+  width: 26px;
+  height: 26px;
+  pointer-events: all;
+  background: white url("../../images/home.gif") center no-repeat;
+  cursor: pointer;
+}
+#resetView:hover {
+  background-color: #f4f4f4;
+}
+.leaflet-touch > #resetView {
+  top: 80px;
+  width: 30px;
+  height: 30px;
+}
+#legend {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  width: 310px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  color: #444;
+  font-weight: bold;
+  border: 1px solid #CCC;
+  border-radius: 4px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.65);
+  background: #fff;
+  background: rgba(255, 255, 255, 0.6);
+  pointer-events: all;
+}
+#legend li {
+  display: none;
+  padding-left: 5px;
+  line-height: 25px;
+  border-bottom: 1px dashed #CCC;
+}
+#legend li .time {
+  margin-right: 1em;
+  float: right;
+}
+#legend .legend-item {
+  display: inline-block;
+  line-height: normal;
+  margin-right: 1em;
+}
+#legend .legend-item .icon {
+  text-align: center;
+}
+#legend .colorful-slider {
+  position: relative;
+  margin: 0 5em 1.5em 1em;
+}
+#legend .colorful-slider .color-segment {
+  float: left;
+  height: .8em;
+}
+#legend .colorful-slider .color-segment span {
+  position: relative;
+  left: -7px;
+  top: 6px;
+  cursor: pointer;
+}
+#legend .colorful-slider .ui-slider {
+  border: none;
+  background: none;
+}
+#legend .colorful-slider .ui-slider-range {
+  border-radius: 0;
+  background: rgba(255, 255, 255, 0.8);
+}
+#legend .colorful-slider .ui-slider-handle {
+  border-radius: 50%;
+  border-color: silver;
+  background: silver;
+  cursor: pointer;
+}
+#legend .colorful-slider .ui-slider-handle:focus {
+  outline: none;
+}
+#alertLegend .legend-item > div {
+  position: relative;
+  width: 36px;
+  height: 27px;
+  background-size: cover;
+  cursor: pointer;
+}
+#alertLegend .legend-item > div span {
+  position: absolute;
+  bottom: -5px;
+  right: -8px;
+  display: block;
+  height: 18px;
+  width: 18px;
+  line-height: 18px;
+  text-align: center;
+  color: white;
+  border-radius: 100%;
+  background-color: red;
+}
+#alertLegend .legend-item > div.gray span {
+  background-color: grey;
+}
+#rainLegend #rainSlider {
+  width: 75%;
+}
+#rainLegend #rainColorBar {
+  position: absolute;
+  width: 100%;
+}
+#rainLegend #rainColorBar .color-segment {
+  width: 25%;
+}
+#rainLegend #stwRainCount {
+  position: absolute;
+  right: -3em;
+  top: -7px;
+  font-weight: normal;
+}
+#windLegendItemsContainer {
+  height: 36px;
+  transform: translateY(-5px);
+  overflow: hidden;
+}
+#windLegendItemsContainer .w-icon {
+  font-size: 32px;
+  transform: translateX(2px) translateY(-4px) rotateZ(-60deg);
+}
+#windLegendItemsContainer .w-label {
+  text-align: center;
+  position: relative;
+  top: -1em;
+}
+#tempLegend .name {
+  cursor: pointer;
+}
+#tempLegend #tempSlider {
+  pointer-events: none;
+}
+#tempLegend #tempSlider .ui-slider-handle {
+  pointer-events: all;
+}
+#tempLegend .pal-entry.color-segment span {
+  display: none;
+  left: 0;
+}
+#tempLegend .pal-entry.color-segment .pal-entry-label--30,
+#tempLegend .pal-entry.color-segment .pal-entry-label--20,
+#tempLegend .pal-entry.color-segment .pal-entry-label--10,
+#tempLegend .pal-entry.color-segment .pal-entry-label-0,
+#tempLegend .pal-entry.color-segment .pal-entry-label-10,
+#tempLegend .pal-entry.color-segment .pal-entry-label-20,
+#tempLegend .pal-entry.color-segment .pal-entry-label-35 {
+  display: inline-block;
+  transform: translateX(-50%);
+}
+#radarPal {
+  height: 26px;
+}
+#radarPal .pal-entry {
+  float: left;
+  width: 18px;
+  height: 14px;
+  margin-right: 1px;
+}
+#radarPal .pal-entry span {
+  position: relative;
+  right: -0.9em;
+  top: 8px;
+}
+#fullscreen {
+  display: none;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-image: url(images/fullscreen_24px.png);
+  pointer-events: all;
+}
+.fullscreen #fullscreen {
+  display: block;
+}
+.onfullscreen #fullscreen {
+  background-image: url(images/fullscreen_exit_24px.png);
+}
+#mapPrdsHandler {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 199;
+  padding: 0 8px 0 3px;
+  pointer-events: all;
+}
+#mapPrdsHandler li {
+  float: left;
+  margin-left: 5px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 3px;
+}
+#mapPrdsHandler li label {
+  display: block;
+  padding: 5px 10px 5px 5px;
+  line-height: 18px;
+  font-family: "黑体";
+  cursor: pointer;
+  color: white;
+}
+#mapPrdsHandler li input {
+  vertical-align: top;
+}
+#rankTable10 {
+  display: none;
+  position: absolute;
+  bottom: 10px;
+  right: 0;
+  width: 260px;
+}
+#rankTable10.put-away .handle {
+  background-image: url(images/tzhan.png);
+}
+#rankTable10.put-away #top10Tab,
+#rankTable10.put-away table {
+  display: none;
+}
+#rankTable10 .handle,
+#rankTable10 table {
+  float: right;
+  pointer-events: all;
+}
+#rankTable10 .handle {
+  height: 310px;
+  width: 14px;
+  background: url("images/tguan.png") no-repeat center;
+  cursor: pointer;
+}
+#rankTable10 table {
+  width: 240px;
+  background-color: #ffffef;
+  border-collapse: collapse;
+}
+#rankTable10 table th,
+#rankTable10 table td {
+  border: 1px solid #C0C0C0;
+}
+#rankTable10 table th:first-child,
+#rankTable10 table td:first-child {
+  width: 150px;
+}
+#rankTable10 table th:last-child,
+#rankTable10 table td:last-child {
+  width: 90px;
+}
+#rankTable10 table th {
+  border-top: none;
+}
+#rankTable10 table td {
+  padding: 5px 10px;
+  cursor: pointer;
+  color: #000;
+}
+#rankTable10 table .top10-fake-row td {
+  cursor: auto;
+}
+#rankTable10 table caption {
+  background: #2187db;
+  color: #fff;
+  line-height: 2em;
+}
+#rankTable10 table #tempSwitch {
+  display: inline-block;
+  height: 16px;
+  width: 16px;
+  cursor: pointer;
+  vertical-align: text-top;
+}
+#rankTable10 table #tempSwitch.low-temp {
+  background-color: #22B14C;
+}
+#rankTable10 table #tempSwitch.high-temp {
+  background-color: #FF7E00;
+}
+#top10Tab {
+  margin-left: 20px;
+  pointer-events: all;
+  border: 1px solid #C0C0C0;
+  border-bottom: 2px solid #2187db;
+  background-color: #ffffef;
+  display: flex;
+}
+#top10Tab > label {
+  flex-grow: 1;
+  float: left;
+}
+#top10Tab > label:not(:last-child) {
+  border-right: 1px solid #C0C0C0;
+}
+#top10Tab input[type="radio"] {
+  display: none;
+}
+#top10Tab span {
+  display: block;
+  height: 2em;
+  padding: 0 .5em;
+  line-height: 2em;
+  text-align: center;
+  cursor: pointer;
+}
+#top10Tab :checked + span {
+  background: #2187db;
+  color: #fff;
+}

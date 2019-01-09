@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j='http://jakarta.apache.org/log4j/'>
+	
+	<!-- 控制台默认输出 -->
+	<appender name="default" class="org.apache.log4j.ConsoleAppender">
+		<param name="threshold" value="info"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value=">>>[%-4p] %d [%t] (%F\:%L) - %m%n"/>
+		</layout>
+	</appender>
+	
+	<!-- 只输出info级别日志 -->
+	<appender name="infoFile" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="threshold" value="info"/>
+		<param name="encoding" value="utf-8"/>
+		<param name="file" value="${catalina.home}/logs/seaGrid/operate/operate.log"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%-4p] %d [%t] method:%l - %m%n"/>
+		</layout>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="levelMin" value="info"/>
+			<param name="levelMax" value="info"/>
+		</filter>
+	</appender>
+	
+	<!-- 只输出warn级别日志 -->
+	<appender name="warnFile" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="threshold" value="warn"/>
+		<param name="encoding" value="utf-8"/>
+		<param name="file" value="${catalina.home}/logs/seaGrid/warn/warn.log"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%-4p] %d [%t] method:%l - %m%n"/>
+		</layout>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="levelMin" value="warn"/>
+			<param name="levelMax" value="warn"/>
+		</filter>
+	</appender>
+	
+	<!-- 只输出error级别日志 -->
+	<appender name="errorFile" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="threshold" value="error"/>
+		<param name="encoding" value="utf-8"/>
+		<param name="file" value="${catalina.home}/logs/seaGrid/error/error.log"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%-4p] %d [%t] method:%l - %m%n"/>
+		</layout>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="levelMin" value="error"/>
+			<param name="levelMax" value="error"/>
+		</filter>
+	</appender>
+	
+	<root>
+	   <appender-ref ref="default"/>
+	   <appender-ref ref="infoFile"/>
+	   <appender-ref ref="warnFile"/>
+	   <appender-ref ref="errorFile"/>
+	</root>
+
+</log4j:configuration>

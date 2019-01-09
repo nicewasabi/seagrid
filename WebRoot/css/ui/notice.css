@@ -1,0 +1,57 @@
+#notice { 
+	/* height: 10px; */
+	margin: 5px 20px;
+	line-height: 25px;
+}
+
+#notice .alerts>label,#notice .recommends>label {
+	color: #595959;
+	float: left;
+}
+
+#notice .alerts {
+	float: left;
+	width: 50%;
+	height: 100%;
+	border-right: 1px solid #d1e0ed;
+}
+
+#notice .alerts>label {
+	padding-left: 25px;
+	background: url("../ui/images/yujing.png") 10px center no-repeat;
+}
+
+#notice .recommends>label {
+	padding-left: 30px;
+	background: url("../ui/images/tuijian2.png") 8px 5px no-repeat;
+}
+
+#notice .recommends>div a {
+	color: #1a96dd;
+	padding: 2px 5px 3px;
+	margin: 0 30px;
+}
+
+#notice .recommends>div a:hover {
+	background: #1a96dd;
+	color: white;
+}
+
+#alerts {
+	float: left;
+}
+
+#alerts li {
+	width: 400px;
+	height: 25px;
+}
+
+#alerts li a {
+	color: #ff8500;
+}
+
+@media ( max-width : 1280px) {
+	#notice { /*width: 1220px;*/
+		
+	}
+}

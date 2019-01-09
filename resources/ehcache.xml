@@ -1,0 +1,34 @@
+<ehcache>
+    <diskStore path="java.io.tmpdir"/>
+	<!-- 默认缓存的规则 -->
+    <defaultCache
+        maxElementsInMemory="10000"
+        eternal="false"
+        timeToIdleSeconds="172800"
+        timeToLiveSeconds="172800"
+        overflowToDisk="true"
+        />
+	<!-- 自定义缓存的规则 保存26小时 -->
+    <cache name="sampleCache1"
+        maxElementsInMemory="10000"
+        eternal="false"
+        timeToIdleSeconds="93600"
+        timeToLiveSeconds="93600"
+        overflowToDisk="true"
+        />
+	<!-- 自定义缓存的规则 -->
+    <cache name="sampleCache2"
+        maxElementsInMemory="1000"
+        eternal="true"
+        timeToIdleSeconds="0"
+        timeToLiveSeconds="0"
+        overflowToDisk="false"
+        /> 
+	<!-- name =""						缓存cache的名字
+		maxElementsInMemory=""			内存中保存对象最大个数 
+		timeToLiveSeconds=""			对象存活时间，单位秒
+		timeToIdleSeconds=""			允许闲置时间 ，单位秒
+		eternal="false"					是否永久存活，设置为true，timeToLiveSeconds将失去作用
+		overflowToDisk="false"			是否输出到磁盘 
+		memoryStoreEvictionPolicy="LFU"	失效策略，有FIFO(先进先出),LFU(最近最少使用),LFU（较少使用） -->
+</ehcache>

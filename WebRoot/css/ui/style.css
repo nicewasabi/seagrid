@@ -1,0 +1,115 @@
+@font-face {
+	font-family: 'meteorological';
+}
+
+ 
+ .w-icon
+    {
+      font-family: "fontello";
+      font-style: normal;
+      font-weight: normal;
+      speak: none;
+     
+      display: inline-block;
+      text-decoration: inherit;
+      width: 1em;
+	  font-size:36px;
+      margin-right: .2em;
+      text-align: center;
+      /* opacity: .8; */
+     
+      /* For safety - reset parent styles, that can break glyph codes*/
+      font-variant: normal;
+      text-transform: none;
+     
+      /* fix buttons height, for twitter bootstrap */
+      line-height: 1em;
+     
+      /* Animation center compensation - margins should be symmetric */
+      /* remove if not needed */
+      margin-left: .2em;
+     
+      /* You can be more comfortable with increased icons size */
+      /* font-size: 120%; */
+     
+      /* Font smoothing. That was taken from TWBS */
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+     
+      /* Uncomment for 3D effect */
+      /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+    }
+
+.fxg {
+	display: block;
+	width: 15px;
+	font-family: 'meteorological';
+	font-size: 22px;
+	font-weight: bold;
+	position: absolute;
+	top: 10px;
+	left: -15px;
+}
+
+.wrap {
+	position: relative;
+	height: 100%;
+	width: 100%;
+	left: 0;
+	top: 0;
+}
+
+#mapTitle {
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 100;
+	width: 100%;
+	color: rgba(255, 0, 0, 1);
+	/* text-shadow: 1px 1px 5px #fff; */
+	padding: 20px;
+	padding-top:10px;
+	text-align: center;
+}
+#mapTitle .title{font-size: 48px; font-family: "Microsoft YaHei"; height: auto;}
+#mapTitle .time{margin-top:20px; color:#ddd; font-size: 14px; font-family: "Microsoft YaHei";}
+
+#main {
+	height: 600px;
+}
+
+.controlFrom fieldset {
+	padding: 5px;
+	border: 1px solid #ddd;
+}
+
+.controlFrom fieldset legend {
+	color: #0066FF;
+}
+
+.figurebar {
+	position: absolute;
+	z-index: 100;
+	bottom: 0;
+	left: 0;
+}
+
+
+.downupmenu {
+	width: 15px;
+	height: 180px;
+	float: right;
+	cursor: pointer;
+}
+
+
+.wind{font-size: 12px;}
+.rain{font-size: 12px;}
+.hail{font-size: 12px;}
+.lightning{font-size: 12px;}
+
+
+
+.labeltable{border-collapse: collapse; margin: 5px 0;}
+.labeltable tr td{border: 1px solid #ddd;}
+.labeltable tr td.lable{text-align: right;}
