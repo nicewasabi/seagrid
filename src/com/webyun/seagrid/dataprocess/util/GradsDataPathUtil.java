@@ -35,8 +35,8 @@ public class GradsDataPathUtil {
 	public static String get10mMeanWindImagePath(String datetime, String timelimit) {
 		try {
 			String path = ROOT_PATH + "image/" + datetime + "/" + datetime + "." + timelimit + ".png";
-			
-			if (new File(path).exists()) {
+			File file=new File(path);
+			if (file.exists()) {
 				return path;
 			}
 		} catch (Exception e) {
@@ -81,8 +81,8 @@ public class GradsDataPathUtil {
 	public static String get10mMaxWindImagePath(String datetime, String timelimit) {
 		try {
 			String path = MAX_WIND_ROOT_PATH + "image/" + datetime + "/" + datetime + "." + timelimit + ".png";
-			
-			if (new File(path).exists()) {
+			File file=new File(path);
+			if (file.exists()) {
 				return path;
 			}
 		} catch (Exception e) {

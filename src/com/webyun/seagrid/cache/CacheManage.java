@@ -34,7 +34,8 @@ import com.webyun.seagrid.monitor.service.impl.MonitorServiceImpl;
 @Repository
 public class CacheManage {
 	@Autowired
-	private MonitorServiceImpl service = new MonitorServiceImpl();
+	private MonitorServiceImpl service;
+//	private MonitorServiceImpl service = new MonitorServiceImpl();
 	//加载指定路径的xml
     private static CacheManager manager = new CacheManager(CacheManage.class.getResourceAsStream("classpath:ehcache.xml"));
 	private static Cache cache = null; 

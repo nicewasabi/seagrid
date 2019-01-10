@@ -60,6 +60,34 @@
 		<div class="menu_level_2" id="402" style="text-align: left;padding-left: 50px;" onclick="changeTab('/seaGrid/ni/determineForecastMain.do')">北印度洋</div>									
 	</div>
 
+	<div class="menu_level_1" onclick="showHide('menu_id_5','menu_image_5')" style="margin: 1px 0px;background-color: #3399FF;">
+		客观方法产品
+		<img alt="箭头" id="menu_image_5" src="/seaGrid/static/images/up.png">
+	</div>
+	<div id="menu_id_5">
+		<div class="menu_level_2" id="501" style="text-align: left;padding-left: 50px;" onclick="changeTab('/seaGrid/objectiveMethodProduct/main.do')">华南海雾</div>									
+	</div>
+	
+	
+	<div class="menu_level_1" onclick="showHide('menu_id_6','menu_image_6')" style="margin: 1px 0px;background-color: #3399FF;">
+		海雾要素
+		<img alt="箭头" id="menu_image_6" src="/seaGrid/static/images/up.png">
+	</div>
+	<div id="menu_id_6">
+		<div class="menu_level_2" id="601" style="text-align: left;padding-left: 50px;" onclick="changeTab('/seaGrid/seaFogProductMain.do')">未来3天站点</div>									
+		<div class="menu_level_2" id="602" style="text-align: left;padding-left: 50px;" onclick="changeTab('/seaGrid/seaFogProductMain.do')">未来7天站点</div>									
+	</div>
+	
+
+	<div class="menu_level_1" onclick="showHide('menu_id_7','menu_image_7')" style="margin: 1px 0px;background-color: #3399FF;">
+		网站链接
+		<img alt="箭头" id="menu_image_7" src="/seaGrid/static/images/up.png">
+	</div>
+	<div id="menu_id_7">
+		<div class="menu_level_2" id="701" style="text-align: left;padding-left: 50px;" onclick="changeTab('/seaGrid/seaFogProductMain.do')">韩国气象厅卫星反演</div>									
+	</div>
+
+
 	<div class="menu_level_1" onclick="showHide('menu_id_1','menu_image_1')" style="margin: 1px 0px;background-color: #3399FF;">
 		系统管理&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		<img alt="箭头" id="menu_image_1" src="/seaGrid/static/images/up.png">

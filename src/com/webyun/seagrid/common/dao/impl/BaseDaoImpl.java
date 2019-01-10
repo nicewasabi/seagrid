@@ -14,6 +14,7 @@ import org.hibernate.Query;
 import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.orm.hibernate3.HibernateCallback;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
@@ -28,6 +29,15 @@ import com.webyun.seagrid.common.dao.BaseDao;
 @SuppressWarnings("rawtypes")
 public class BaseDaoImpl<T, PK extends Serializable> extends HibernateDaoSupport implements BaseDao<T, PK> {
 
+	
+	@Autowired  
+    public void setSessionFactoryOverride(SessionFactory sessionFactory)  
+    {  
+  
+        super.setSessionFactory(sessionFactory);  
+    }  
+	
+	
 	private Class entityClass;
 	public void addSessionFactory(SessionFactory factory) {
 		super.setSessionFactory(factory);

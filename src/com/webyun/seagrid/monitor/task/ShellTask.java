@@ -9,6 +9,7 @@ import javax.annotation.Resource;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.stereotype.Service;
 
 import com.webyun.seagrid.common.util.FileConfigUtil;
 import com.webyun.seagrid.common.util.RunShell;
@@ -28,6 +29,7 @@ import com.webyun.seagrid.monitor.util.MonitorUtil;
  * @UpdateTime：下午7:29:07
  * @Version :V1.0
  */
+
 public class ShellTask {
 	
 	@Resource
