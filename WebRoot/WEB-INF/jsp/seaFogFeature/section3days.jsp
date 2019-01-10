@@ -45,6 +45,7 @@
 						起报时间：
 						<input class="Wdate" id="datetime" type="text" style="width:90px;max-width:90px;height:25px;margin:0" onfocus="WdatePicker({skin:'twoer', dateFmt:'yyyyMMdd',autoPickDate: true});"/>
 						<select id="hour">
+						    <option value="00">08</option>
 							<option value="12">20</option>
 						</select>
 						<input id="subDatetimeBtn" type="button" value="&lt;&lt;" class="easyui-linkbutton btn"/>
@@ -60,12 +61,18 @@
 						<input id="addTimelimitBtn" type="button" value="&gt;&gt;" class="easyui-linkbutton btn"/>
 						&nbsp;
 						<select id="featuretype">
-						   <option value="Vis">VIS</option>	
-						   <option value="2mRH">2mRH</option>	
-						   <option value="1000hPaRH">1000hPaRH</option>	
-						   <option value="T2m-Ts">T2m-Ts</option>	
-						   <option value="T925hPa-T1000hPa">T925-T1000hPa</option>	
-						   <option value="T1000hPa-T2m">T1000hPa-T2m</option>			
+						   <option value="qingdao">青岛</option>	
+						   <option value="dalian">大连</option>	
+						   <option value="tianjin">天津</option>	
+						   <option value="xuwen">徐闻</option>	
+						   <option value="haikou">海口</option>	
+						   <option value="weizhoudao">涠洲岛</option>	
+						   <option value="yantai">烟台</option>	
+						   <option value="rizhao">日照</option>	
+						   <option value="shanghai">上海</option>	
+						   <option value="zhoushan">舟山</option>	
+						   <option value="ningbo">宁波</option>	
+						   <option value="fuzhou">福州</option>			
 						</select>
 						&nbsp;
 						<input id="drawBtn" type="button" value="查询" class="easyui-linkbutton btn"/>

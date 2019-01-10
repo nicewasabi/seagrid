@@ -42,6 +42,7 @@ import com.webyun.seagrid.seaWindProbability.util.WindProbabilityUtil;
  * 
  */
 public class ObjectiveMethodProductUtil {
+	private static final Logger log = Logger.getLogger(ObjectiveMethodProductUtil.class);
 
 	public static final String SEAFOG_VIS_PREFIX = "MAMSSEAFOG";
 	public static final String SEAFOG_1000hPaRH_PREFIX = "1000hPaRH";
@@ -49,9 +50,8 @@ public class ObjectiveMethodProductUtil {
 	public static final String SEAFOG_T1000hPa_T2m_PREFIX = "T1000hPa-T2m";
 	public static final String SEAFOG_T2m_Ts_PREFIX = "T2m-Ts";
 	public static final String SEAFOG_T925hPa_T1000hPa_PREFIX = "T925hPa-T1000hPa";
-	SEAFOG_PREFIX
 
-	private static final Logger log = Logger.getLogger(ObjectiveMethodProductUtil.class);
+
 	// 数据存储根目录
 	private static final String ObjectiveMethodProduct_ROOT_PATH = FileConfigUtil
 			.getProperty("image.objectiveMethodProduct");
