@@ -65,7 +65,7 @@
 		<img alt="箭头" id="menu_image_5" src="/seaGrid/static/images/up.png">
 	</div>
 	<div id="menu_id_5">
-		<div class="menu_level_2" id="501" style="text-align: left;padding-left: 50px;" onclick="changeTab('/seaGrid/objectiveMethodProduct/main.do')">华南海雾</div>									
+		<div class="menu_level_2" id="501" style="text-align: left;padding-left: 50px;" onclick="changeTab('/seaGrid/objectiveMethodProduct/huananSeaFog/main.do')">华南海雾</div>									
 	</div>
 	
 	
@@ -74,8 +74,9 @@
 		<img alt="箭头" id="menu_image_6" src="/seaGrid/static/images/up.png">
 	</div>
 	<div id="menu_id_6">
-		<div class="menu_level_2" id="601" style="text-align: left;padding-left: 50px;" onclick="changeTab('/seaGrid/seaFogProductMain.do')">未来3天站点</div>									
-		<div class="menu_level_2" id="602" style="text-align: left;padding-left: 50px;" onclick="changeTab('/seaGrid/seaFogProductMain.do')">未来7天站点</div>									
+		<div class="menu_level_2" id="601" style="text-align: left;padding-left: 50px;" onclick="changeTab('/seaGrid/seaFogFeature/section3days/main.do')">未来3天站点预报</div>									
+		<div class="menu_level_2" id="602" style="text-align: left;padding-left: 50px;" onclick="changeTab('/seaGrid/seaFogFeature/section7days/main.do')">未来7天站点预报</div>			
+		<div class="menu_level_2" id="603" style="text-align: left;padding-left: 50px;" onclick="changeTab('/seaGrid/seaFogFeature/featureCombination/main.do')">要素组合预报</div>							
 	</div>
 	
 

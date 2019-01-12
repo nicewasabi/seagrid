@@ -37,7 +37,7 @@
 					<ol class="breadcrumb" style="margin-top: 10px;margin-left: 10px;background-color: white;width: 40%;">
 					  	<li><a href="${ctx}">首页/</a></li>
 					  	<li><a href="javascript:void(0)">海雾要素/</a></li>
-					  	<li class="active">未来7天站点预报</li>
+					  	<li class="active">要素组合预报</li>
 					</ol>
 					<hr style="width:100%">
 					
@@ -45,29 +45,35 @@
 						起报时间：
 						<input class="Wdate" id="datetime" type="text" style="width:90px;max-width:90px;height:25px;margin:0" onfocus="WdatePicker({skin:'twoer', dateFmt:'yyyyMMdd',autoPickDate: true});"/>
 						<select id="hour">
-							<option value="00">08</option>
+						    <option value="00">08</option>
 							<option value="12">20</option>
-							
 						</select>
 						<input id="subDatetimeBtn" type="button" value="&lt;&lt;" class="easyui-linkbutton btn"/>
 						<input id="addDatetimeBtn" type="button" value="&gt;&gt;" class="easyui-linkbutton btn"/>
 						&nbsp;
+						时效：
 				
-						<select id="location">
-						   <option value="qingdao">青岛</option>	
-						   <option value="dalian">大连</option>	
-						   <option value="tianjin">天津</option>	
-						   <option value="xuwen">徐闻</option>	
-						   <option value="haikou">海口</option>	
-						   <option value="weizhoudao">涠洲岛</option>	
-						   <option value="yantai">烟台</option>	
-						   <option value="rizhao">日照</option>	
-						   <option value="shanghai">上海</option>	
-						   <option value="zhoushan">舟山</option>	
-						   <option value="ningbo">宁波</option>	
-						   <option value="fuzhou">福州</option>			
+						<select id="timelimit">
+							<c:forEach begin="0" end="240" step="6" varStatus="hour">
+								<option><fmt:formatNumber pattern="000" value="${hour.index}"></fmt:formatNumber></option>
+							</c:forEach>
 						</select>
 						&nbsp;
+						
+						要素：
+						<select id="feature">
+						   <option value="rh2m_wind10m">rh2m_wind10m</option>	
+						   <option value="rh1000_wind10m">RH1000_wind10m</option>	
+						   <option value="rh950_wind">RH950_wind</option>	
+						   <option value="rh925_wind">RH925_wind</option>	
+						   <option value="rh850_wind">RH850_wind</option>	
+						   <option value="td_sst">Td-sst</option>	
+						   <option value="ta_td">Ta-td</option>	
+						   <option value="ta_sst">Ta-sst</option>	
+						   <option value="t1000_t2m">T1000-t2m</option>	
+						   <option value="t925_t1000">T925-t1000</option>	
+						   <option value="sst">sst</option>	
+						</select>
 						<input id="drawBtn" type="button" value="查询" class="easyui-linkbutton btn"/>
 					</div>
 					<div style="height:654px;border:1px solid gray;">
@@ -101,7 +107,7 @@
 	</body>
 	<script type="text/javascript">
 		// 添加菜单栏选中标记
-		$("#602").addClass("selectedTitle");
+		$("#603").addClass("selectedTitle");
 		// 初始化起报时间
 		var date = new Date();//获得当前的北京时间
 		var datetime = getFormatDate(new Date(date.getTime() - 24 * 60 * 60 * 1000), "yyyyMMdd");
@@ -109,7 +115,7 @@
 		$("#datetime").val(datetime);
 		
 		// 初始化绘制图像
-		showImage(datetime , "00", "qingdao");
+		showImage(datetime + "12", "000", "rh2m_wind10m");
 		
 		// 绘制图像
 		$("#drawBtn").click(function() {
@@ -176,13 +182,13 @@
 			datetime = datetime + hour;
 			var timelimit = $("#timelimit").val();
 			// 产品类型
-			var featuretype = $("#featuretype option:selected").val();
-			showImage(datetime, timelimit, featuretype);
+			var feature = $("#feature option:selected").val();
+			showImage(datetime, timelimit, feature);
 		}
 		
 		// 显示图像
-		function showImage(datetime, hour, location) {
-			$.post("${ctx}/seaFogFeature/section7days/validImage.do", {datetime:datetime, hour:hour, location:location}, function(data){
+		function showImage(datetime, timelimit, feature) {
+			$.post("${ctx}/seaFogFeature/featureCombination/validImage.do", {datetime:datetime, timelimit:timelimit, feature:feature}, function(data){
 				// 清空内容
 				$("#imgDiv").html();
 				if(data == false){
@@ -190,7 +196,7 @@
 				}else{
 					$("#imgDiv").html("<img id='img' src='' style='width:100%;height:100%;border: 1px solid gray;' />");
 					var img = $("#img");
-					var url = "${ctx}/objectiveMethodProduct/showImage.do?datetime=" + datetime + "&timelimit=" + timelimit + "&windType=" + windType;
+					var url = "${ctx}/seaFogFeature/featureCombination/showImage.do?datetime=" + datetime + "&timelimit=" + timelimit + "&feature=" + feature;
 					img.attr("src", url);
 				}
 			});

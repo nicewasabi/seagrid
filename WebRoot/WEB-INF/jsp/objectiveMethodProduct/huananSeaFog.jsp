@@ -101,12 +101,14 @@
 	</body>
 	<script type="text/javascript">
 		// 添加菜单栏选中标记
-		$("#301").addClass("selectedTitle");
+		$("#501").addClass("selectedTitle");
 		// 初始化起报时间
 		var date = new Date();//获得当前的北京时间
 		var datetime = getFormatDate(new Date(date.getTime() - 24 * 60 * 60 * 1000), "yyyyMMdd");
-		$("#timeStart").val(datetime);
-		$("#datetime").val(datetime);
+		var hour = $("#hour").val();
+		
+		var timelimit = $("#timelimit").val();
+	
 		
 		// 初始化绘制图像
 		showImage(datetime + "12", "000", "VIS");
@@ -182,7 +184,7 @@
 		
 		// 显示图像
 		function showImage(datetime, timelimit, featuretype) {
-			$.post("${ctx}/objectiveMethodProduct/validImage.do", {datetime:datetime, timelimit:timelimit, featuretype:featuretype}, function(data){
+			$.post("${ctx}/objectiveMethodProduct/huananSeaFog/validImage.do", {datetime:datetime, timelimit:timelimit, featuretype:featuretype}, function(data){
 				// 清空内容
 				$("#imgDiv").html();
 				if(data == false){
@@ -190,7 +192,7 @@
 				}else{
 					$("#imgDiv").html("<img id='img' src='' style='width:100%;height:100%;border: 1px solid gray;' />");
 					var img = $("#img");
-					var url = "${ctx}/objectiveMethodProduct/showImage.do?datetime=" + datetime + "&timelimit=" + timelimit + "&windType=" + windType;
+					var url = "${ctx}/objectiveMethodProduct/huananSeaFog/showImage.do?datetime=" + datetime + "&timelimit=" + timelimit + "&featuretype=" + featuretype;
 					img.attr("src", url);
 				}
 			});

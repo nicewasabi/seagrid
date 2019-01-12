@@ -4,7 +4,7 @@
 
  *
 
- * @Title: SeaFogFeatureController.java
+ * @Title: FeatureCombinationController.java
 
  * @Prject: seaGrid
 
@@ -14,7 +14,7 @@
 
  * @author: wasabi  
 
- * @date: 2019年1月10日 下午3:46:39
+ * @date: 2019年1月11日 下午2:20:32
 
  * @version: V1.0  
 
@@ -32,38 +32,36 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.webyun.seagrid.common.util.FileOperationUtil;
-import com.webyun.seagrid.objectiveMethodProduct.controller.HuananSeaFogController;
-import com.webyun.seagrid.objectiveMethodProduct.util.ObjectiveMethodProductUtil;
 import com.webyun.seagrid.seaFogFeature.util.SeaFogFeatureUtil;
 
 /**
 
- * @ClassName: SeaFogFeatureController
+ * @ClassName: FeatureCombinationController
 
  * @Description: TODO
 
  * @author: wasabi
 
- * @date: 2019年1月10日 下午3:46:39
+ * @date: 2019年1月11日 下午2:20:32
 
+/seaFogFeature/featureCombination/mian.do
  */
 @Controller
-@RequestMapping("/seaFogFeature/section3days")
-public class Section3DaysController {
-	private Logger log = Logger.getLogger(Section3DaysController.class);
+@RequestMapping("/seaFogFeature/featureCombination")
+public class FeatureCombinationController {
+private Logger log = Logger.getLogger(FeatureCombinationController.class);
 	
 	@RequestMapping("/main.do")
 	public String toMain() {
-		return "/seaFogFeature/section3days";
+		return "/seaFogFeature/featureCombination";
 	}
-	
 	
 	@RequestMapping("/validImage.do")
 	@ResponseBody
-	public Boolean validImage(String datetime, String hour, String location, HttpServletResponse response) {
+	public Boolean validImage(String datetime, String timelimit, String feature, HttpServletResponse response) {
 		try {
 			// 获取对应日期时间的图片所在路径
-			String path = SeaFogFeatureUtil.getSeaFogSection3DaysImagePath(datetime, hour, location);
+			String path = SeaFogFeatureUtil.getFeatureCombinationImagePath(datetime, timelimit, feature);
 
 			if (path != null) {
 				return true;
@@ -77,12 +75,12 @@ public class Section3DaysController {
 	
 	
 	@RequestMapping("/showImage.do")
-	public void showImage(String datetime, String hour, String location, HttpServletResponse response){
+	public void showImage(String datetime, String timelimit, String feature, HttpServletResponse response){
 		response.setContentType("multipart/form-data");
 		
 		try {
 			// 获取对应日期时间的图片所在路径
-			String path = SeaFogFeatureUtil.getSeaFogSection3DaysImagePath(datetime, hour, location);
+			String path = SeaFogFeatureUtil.getFeatureCombinationImagePath(datetime, timelimit, feature);
 			
 			if (path != null) {
 				// 将指定路径下的图片输出到页面
@@ -94,6 +92,5 @@ public class Section3DaysController {
 		}
 	}
 	
-
 
 }

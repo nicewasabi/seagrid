@@ -49,7 +49,7 @@ import com.webyun.seagrid.seaWindProbability.util.WindProbabilityUtil;
  * 
  */
 @Controller
-@RequestMapping("/objectiveMethodProduct")
+@RequestMapping("/objectiveMethodProduct/huananSeaFog")
 public class HuananSeaFogController {
 
 	private Logger log = Logger.getLogger(HuananSeaFogController.class);
@@ -93,12 +93,12 @@ public class HuananSeaFogController {
 	
 	
 	@RequestMapping("/showImage.do")
-	public void showImage(String datetime, String timelimit, String windType, HttpServletResponse response){
+	public void showImage(String datetime, String timelimit, String featuretype, HttpServletResponse response){
 		response.setContentType("multipart/form-data");
 		
 		try {
 			// 获取对应日期时间的图片所在路径
-			String path = WindProbabilityUtil.getNPWindImagePath(datetime, timelimit, windType);
+			String path = ObjectiveMethodProductUtil.getSeaFogImagePath(datetime, timelimit, featuretype);
 			
 			if (path != null) {
 				// 将指定路径下的图片输出到页面

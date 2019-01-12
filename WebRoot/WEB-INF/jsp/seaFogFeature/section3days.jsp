@@ -37,7 +37,7 @@
 					<ol class="breadcrumb" style="margin-top: 10px;margin-left: 10px;background-color: white;width: 40%;">
 					  	<li><a href="${ctx}">首页/</a></li>
 					  	<li><a href="javascript:void(0)">海雾要素/</a></li>
-					  	<li class="active">未来3天站点相对湿度、温度、风向杆垂直剖面剖面</li>
+					  	<li class="active">未来3天站点预报</li>
 					</ol>
 					<hr style="width:100%">
 					
@@ -50,17 +50,10 @@
 						</select>
 						<input id="subDatetimeBtn" type="button" value="&lt;&lt;" class="easyui-linkbutton btn"/>
 						<input id="addDatetimeBtn" type="button" value="&gt;&gt;" class="easyui-linkbutton btn"/>
-						&nbsp;
-						时效：
-						<select id="timelimit">
-							<c:forEach begin="0" end="72" step="2" varStatus="hour">
-								<option><fmt:formatNumber pattern="000" value="${hour.index}"></fmt:formatNumber></option>
-							</c:forEach>
-						</select>
 						<input id="subTimelimitBtn" type="button" value="&lt;&lt;" class="easyui-linkbutton btn"/>
 						<input id="addTimelimitBtn" type="button" value="&gt;&gt;" class="easyui-linkbutton btn"/>
 						&nbsp;
-						<select id="featuretype">
+						<select id="location">
 						   <option value="qingdao">青岛</option>	
 						   <option value="dalian">大连</option>	
 						   <option value="tianjin">天津</option>	
@@ -108,7 +101,7 @@
 	</body>
 	<script type="text/javascript">
 		// 添加菜单栏选中标记
-		$("#301").addClass("selectedTitle");
+		$("#601").addClass("selectedTitle");
 		// 初始化起报时间
 		var date = new Date();//获得当前的北京时间
 		var datetime = getFormatDate(new Date(date.getTime() - 24 * 60 * 60 * 1000), "yyyyMMdd");
@@ -116,7 +109,7 @@
 		$("#datetime").val(datetime);
 		
 		// 初始化绘制图像
-		showImage(datetime + "12", "000", "VIS");
+		showImage(datetime, "00", "qingdao");
 		
 		// 绘制图像
 		$("#drawBtn").click(function() {
@@ -180,16 +173,14 @@
 		function showImageProcess() {
 			var datetime = $("#datetime").val();
 			var hour = $("#hour").val();
-			datetime = datetime + hour;
-			var timelimit = $("#timelimit").val();
-			// 产品类型
-			var featuretype = $("#featuretype option:selected").val();
-			showImage(datetime, timelimit, featuretype);
+			// 地点
+			var location = $("#location option:selected").val();
+			showImage(datetime, hour, location);
 		}
 		
 		// 显示图像
-		function showImage(datetime, timelimit, featuretype) {
-			$.post("${ctx}/objectiveMethodProduct/validImage.do", {datetime:datetime, timelimit:timelimit, featuretype:featuretype}, function(data){
+		function showImage(datetime, hour, location) {
+			$.post("${ctx}/seaFogFeature/section3days/validImage.do", {datetime:datetime, hour:hour, location:location}, function(data){
 				// 清空内容
 				$("#imgDiv").html();
 				if(data == false){
@@ -197,7 +188,7 @@
 				}else{
 					$("#imgDiv").html("<img id='img' src='' style='width:100%;height:100%;border: 1px solid gray;' />");
 					var img = $("#img");
-					var url = "${ctx}/objectiveMethodProduct/showImage.do?datetime=" + datetime + "&timelimit=" + timelimit + "&windType=" + windType;
+					var url = "${ctx}/seaFogFeature/section3day/showImage.do?datetime=" + datetime + "&hour=" + hour + "&location=" + location;
 					img.attr("src", url);
 				}
 			});
