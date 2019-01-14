@@ -45,8 +45,8 @@
 						起报时间：
 						<input class="Wdate" id="datetime" type="text" style="width:90px;max-width:90px;height:25px;margin:0" onfocus="WdatePicker({skin:'twoer', dateFmt:'yyyyMMdd',autoPickDate: true});"/>
 						<select id="hour">
-							<option value="00">08</option>
-							<option value="12">20</option>
+							<option value="08">08</option>
+							<option value="20">20</option>
 						</select>
 						<input id="subDatetimeBtn" type="button" value="&lt;&lt;" class="easyui-linkbutton btn"/>
 						<input id="addDatetimeBtn" type="button" value="&gt;&gt;" class="easyui-linkbutton btn"/>
@@ -101,7 +101,7 @@
 		$("#datetime").val(datetime);
 		
 		// 初始化绘制图像
-		showImage(datetime + "00", "000", "deterministic");
+		showImage(datetime + "08", "000", "deterministic");
 		
 		// 绘制图像
 		$("#drawBtn").click(function() {

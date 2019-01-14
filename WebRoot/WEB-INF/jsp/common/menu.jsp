@@ -1,5 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <script type="text/javascript">
 	/**
 	 * 显示隐藏
@@ -85,7 +86,8 @@
 		<img alt="箭头" id="menu_image_7" src="/seaGrid/static/images/up.png">
 	</div>
 	<div id="menu_id_7">
-		<div class="menu_level_2" id="701" style="text-align: left;padding-left: 50px;" onclick="changeTab('/seaGrid/seaFogProductMain.do')">韩国气象厅卫星反演</div>									
+		<div class="menu_level_2" id="701" style="text-align: left;padding-left: 50px;"><a href="http://web.kma.go.kr/chn/weather/images/satellite.jsp" target="	
+_blank" style="text-decoration:none" >韩国气象厅卫星反演</a></div>									
 	</div>
 
 
@@ -96,7 +98,7 @@
 	<div id="menu_id_1">
 		<div class="menu_level_2" id="101" style="text-align: left;padding-left: 50px;" onclick="changeTab('/seaGrid/monitor/fileMonitor.do')">文件监控</div>									
 		<div class="menu_level_2" id="103" style="text-align: left;padding-left: 50px;" onclick="changeTab('/seaGrid/fileParseLog/fileMonitor.do')">数据监控</div>
-		<div class="menu_level_2" id="104" style="text-align: left;padding-left: 50px;" onclick="changeTab('/seaGrid/computer/manage.do')">系统监控</div>					
-	</div>
+<!-- 		<div class="menu_level_2" id="104" style="text-align: left;padding-left: 50px;" onclick="changeTab('/seaGrid/computer/manage.do')">系统监控</div>					
+ -->	</div>
 	
 </div>

@@ -62,8 +62,8 @@
 						
 						要素：
 						<select id="feature">
-						   <option value="rh2m_wind10m">rh2m_wind10m</option>	
-						   <option value="rh1000_wind10m">RH1000_wind10m</option>	
+						   <option value="rh2m_wind10">rh2m_wind10m</option>	
+						   <option value="rh1000_wind10">RH1000_wind10m</option>	
 						   <option value="rh950_wind">RH950_wind</option>	
 						   <option value="rh925_wind">RH925_wind</option>	
 						   <option value="rh850_wind">RH850_wind</option>	
@@ -115,7 +115,7 @@
 		$("#datetime").val(datetime);
 		
 		// 初始化绘制图像
-		showImage(datetime + "12", "000", "rh2m_wind10m");
+		showImage(datetime + "12", "000", "rh2m_wind10");
 		
 		// 绘制图像
 		$("#drawBtn").click(function() {

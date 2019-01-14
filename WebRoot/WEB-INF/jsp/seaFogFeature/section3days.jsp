@@ -188,7 +188,7 @@
 				}else{
 					$("#imgDiv").html("<img id='img' src='' style='width:100%;height:100%;border: 1px solid gray;' />");
 					var img = $("#img");
-					var url = "${ctx}/seaFogFeature/section3day/showImage.do?datetime=" + datetime + "&hour=" + hour + "&location=" + location;
+					var url = "${ctx}/seaFogFeature/section3days/showImage.do?datetime=" + datetime + "&hour=" + hour + "&location=" + location;
 					img.attr("src", url);
 				}
 			});

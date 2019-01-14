@@ -190,7 +190,7 @@
 				}else{
 					$("#imgDiv").html("<img id='img' src='' style='width:100%;height:100%;border: 1px solid gray;' />");
 					var img = $("#img");
-					var url = "${ctx}/objectiveMethodProduct/showImage.do?datetime=" + datetime + "&timelimit=" + timelimit + "&windType=" + windType;
+					var url = "${ctx}/seaFogFeature/section7days/showImage.do?datetime=" + datetime + "&hour=" + hour + "&location=" + location;
 					img.attr("src", url);
 				}
 			});

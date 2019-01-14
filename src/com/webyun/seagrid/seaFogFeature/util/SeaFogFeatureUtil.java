@@ -70,6 +70,8 @@ public class SeaFogFeatureUtil {
 	
 	public static String getSeaFogSection7DaysImagePath(String datetime, String hour, String location) {
 		
+		
+		
 		try {
 			String path = SeaFogSection7Days_ROOT_PATH  + "/" + SeaFogSection3AND7Days_PREFIX + datetime+hour+"_"+location + ".png";
 			if (new File(path).exists()) {
@@ -86,9 +88,44 @@ public class SeaFogFeatureUtil {
 	
 	
 	public static String getFeatureCombinationImagePath(String datetime, String timelimit, String feature) {
+		String prexifString="";
+		switch (feature) {
+		case "rh1000_wind10":
+			prexifString="rh1000_";
+			break;
+		case "rh2m_wind10":
+			prexifString="rh2m_";
+			break;
+		case "rh850_wind":
+			prexifString="rh850_";
+			break;
+		case "rh925_wind":
+			prexifString="rh925_";
+			break;
+		case "sst":
+			prexifString="sst";
+			break;
+		case "t1000_t2m":
+			prexifString="t1000_t2m_";
+			break;
+		case "t925_t1000":
+			prexifString="t925_1000_";
+			break;
+		case "ta_sst":
+			prexifString="ta_sst";
+			break;
+		case "ta_td":
+			prexifString="ta_td";
+			break;
+		case "td_sst":
+			prexifString="td_sst";
+			break;
+		default:
+			break;
+		}
 		
 		try {
-			String path = FeatureCombination_ROOT_PATH  + "/" +feature +"_"+ datetime+"_"+timelimit + ".png";
+			String path = FeatureCombination_ROOT_PATH  + "/" +feature+"/"+prexifString + datetime+"_"+timelimit + ".png";
 			if (new File(path).exists()) {
 				return path;
 			}

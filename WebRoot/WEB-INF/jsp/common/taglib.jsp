@@ -78,7 +78,7 @@
 	#navbar dl{border-radius:0px 0px 5px 5px;width:140px;line-height:30px;display:none;font-size:12px;background:#5489CB;position:absolute;top:30px;left:0px;}
 	#navbar dl dd a{border-radius:0px 0px 5px 5px;color:#FFF;font-size:14px;margin-top:0px;border-top:1px solid #FFF;}/* dashed */
 	#navbar dl dd a:hover{color:#FFF;background:#6CA5F7;font-size:16px;}
-	.link{width: 160px;background-color: #3399FF;}
+	.link{width: 100px;background-color: #3399FF;}
 	.link:HOVER {background-color: #FF9900;}
 	.shugang{background-color: #3399FF;color: gray;font-size: 10px;}
 </style>

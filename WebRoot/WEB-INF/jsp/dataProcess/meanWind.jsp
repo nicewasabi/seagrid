@@ -255,8 +255,8 @@
 			var args = {datetime: datetime, stationCode: stationCode};
 			$.post("${ctx}/meanWind/getWindSpdAndirData.do", args, function(data){
 				if (data.yDatas == null) {
-					alert("指定时间的站点数据不存在");
-					return;
+/* 					alert("指定时间的站点数据不存在");
+ */					return;
 				}
 				
 				var windSpeed = [];// 风速
@@ -593,8 +593,8 @@
 					return;
 				
 				if (data.liveDatas == null) {
-					alert(datetime + "站点[" + stationCode + "]所对应的实况数据不存在");
-					return;
+/* 					alert(datetime + "站点[" + stationCode + "]所对应的实况数据不存在");
+ */					return;
 				}
 				
 				$("#showErrCheckGraph").highcharts({

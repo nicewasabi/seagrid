@@ -45,8 +45,8 @@
 						起报时间：
 						<input class="Wdate" id="datetime" type="text" style="width:90px;max-width:90px;height:25px;margin:0" onfocus="WdatePicker({skin:'twoer', dateFmt:'yyyyMMdd',autoPickDate: true});"/>
 						<select id="hour">
-							<option value="00">08</option>
-							<option value="12">20</option>
+							<option value="08">08</option>
+							<option value="20">20</option>
 						</select>
 						<input id="subDatetimeBtn" type="button" value="&lt;&lt;" class="easyui-linkbutton btn"/>
 						<input id="addDatetimeBtn" type="button" value="&gt;&gt;" class="easyui-linkbutton btn"/>
@@ -60,12 +60,12 @@
 						<input id="subTimelimitBtn" type="button" value="&lt;&lt;" class="easyui-linkbutton btn"/>
 						<input id="addTimelimitBtn" type="button" value="&gt;&gt;" class="easyui-linkbutton btn"/>
 						&nbsp;
-						<div class="div_border">
+					<!-- 	<div class="div_border">
 							<input type="radio" name="windType" value="average_dispersion" checked/>NP8级大风集合平均及离散度
 							<input type="radio" name="windType" value="probability"/>NP8级大风概率
 							<input type="radio" name="windType" value="percent"/>NP8级大风分位数
 							<input type="radio" name="windType" value="stamp"/>NP8级大风邮票图
-						</div>
+						</div> -->
 						&nbsp;
 						<input id="drawBtn" type="button" value="查询" class="easyui-linkbutton btn"/>
 					</div>
@@ -108,7 +108,7 @@
 		$("#datetime").val(datetime);
 		
 		// 初始化绘制图像
-		showImage(datetime + "00", "000", "average_dispersion");
+		showImage(datetime + "20", "000", "average_dispersion");
 		
 		// 绘制图像
 		$("#drawBtn").click(function() {

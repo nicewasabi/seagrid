@@ -12,18 +12,30 @@
  	
 	<table style="position: relative;bottom: 30px;left: 375px;text-align: center;color: white;font-size: 16px;" cellspacing="0" cellpadding="0">
 		<tr>
-			<td style="width: 60px;height: 30px;background-color: #3399FF;border-radius: 10px 0px 0px 0px;border: 0px solid black;"></td>			
+		<td style="width: 60px;height: 30px;background-color: #3399FF;border-radius: 10px 0px 0px 0px;border: 0px solid black;"></td>			
 			<td class="shugang">|</td>	
 			<td class="link" >
 				<a style="color: white;text-decoration: none;"  href="${ctx}${childPermission.url}/meanWind/main.do">风场订正</a>
 			</td>
 			<td class="shugang">|</td>
-			<td class="link" >
+			<td class="link" style="width: 160px;">
 				<a style="color: white;text-decoration: none;"  href="${ctx}${childPermission.url}/np/main.do">10米8级大风概率</a>
 			</td>
 			<td class="shugang">|</td>
-			<td class="link" >
+			<td class="link"  style="width: 160px;">
 				<a style="color: white;text-decoration: none;"  href="${ctx}${childPermission.url}/np/determineForecastMain.do">8级大风确定性预报</a>
+			</td>
+			<td class="shugang">|</td>
+			<td class="link" >
+				<a style="color: white;text-decoration: none;"  href="${ctx}${childPermission.url}/objectiveMethodProduct/huananSeaFog/main.do">客观方法产品</a>
+			</td>
+			<td class="shugang">|</td>
+			<td class="link" >
+				<a style="color: white;text-decoration: none;"  href="${ctx}${childPermission.url}/seaFogFeature/section3days/main.do">海雾要素</a>
+			</td>
+			<td class="shugang">|</td>
+			<td class="link" >
+				<a style="color: white;text-decoration: none;"  href="http://web.kma.go.kr/chn/weather/images/satellite.jsp">网站链接</a>
 			</td>
 			<td class="shugang">|</td>
 			<td class="link" >
@@ -33,8 +45,8 @@
 			<td class="link" >
 				<a style="color: white;text-decoration: none;"  href="${ctx }${childPermission.url}">文件监控</a>
 			</td> --%>
-			<td style="width: 60px;background-color: #3399FF;border-radius: 0px 10px 0px 0px;border: 0px solid black;"></td>	
-		</tr>
+<!-- 			<td style="width: 60px;background-color: #3399FF;border-radius: 0px 10px 0px 0px;border: 0px solid black;"></td>	
+ -->		</tr>
 	</table> 
 	<%-- <table style="position: relative;bottom: 133px;left: 375px;text-align: center;color: white;font-size: 16px;" cellspacing="0" cellpadding="0">
 		<tr>

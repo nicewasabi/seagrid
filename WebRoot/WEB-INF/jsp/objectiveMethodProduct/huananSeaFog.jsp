@@ -52,14 +52,14 @@
 						&nbsp;
 						时效：
 						<select id="timelimit">
-							<c:forEach begin="0" end="72" step="2" varStatus="hour">
+							<c:forEach begin="0" end="72" step="3" varStatus="hour">
 								<option><fmt:formatNumber pattern="000" value="${hour.index}"></fmt:formatNumber></option>
 							</c:forEach>
 						</select>
 						<input id="subTimelimitBtn" type="button" value="&lt;&lt;" class="easyui-linkbutton btn"/>
 						<input id="addTimelimitBtn" type="button" value="&gt;&gt;" class="easyui-linkbutton btn"/>
 						&nbsp;
-						<select id="featuretype">
+						<select id="featuretype" style="width:90px;" >
 						   <option value="Vis">VIS</option>	
 						   <option value="2mRH">2mRH</option>	
 						   <option value="1000hPaRH">1000hPaRH</option>	
@@ -106,12 +106,12 @@
 		var date = new Date();//获得当前的北京时间
 		var datetime = getFormatDate(new Date(date.getTime() - 24 * 60 * 60 * 1000), "yyyyMMdd");
 		var hour = $("#hour").val();
-		
 		var timelimit = $("#timelimit").val();
-	
+		$("#timeStart").val(datetime);
+		$("#datetime").val(datetime);
 		
 		// 初始化绘制图像
-		showImage(datetime + "12", "000", "VIS");
+		showImage(datetime + "12", "000", "Vis");
 		
 		// 绘制图像
 		$("#drawBtn").click(function() {

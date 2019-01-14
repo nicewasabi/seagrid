@@ -33,7 +33,8 @@ public class WindProbabilityUtil {
 	 */
 	public static String getNPWindImagePath(String datetime, String timelimit, String windType) {
 		try {
-			String path = SEA_WIND_ROOT_PATH + "NP/" + windType + "/" + datetime + "/" + datetime + "_" + timelimit + ".png";
+			datetime=datetime.substring(2);
+			String path = SEA_WIND_ROOT_PATH + "NP/"  + datetime +"." + timelimit + ".png";
 			
 			if (new File(path).exists()) {
 				return path;
@@ -57,7 +58,8 @@ public class WindProbabilityUtil {
 	 */
 	public static String getNIWindImagePath(String datetime, String timelimit, String windType) {
 		try {
-			String path = SEA_WIND_ROOT_PATH + "NI/" + windType + "/" + datetime + "/" + datetime + "_" + timelimit + ".png";
+			datetime=datetime.substring(2);
+			String path = SEA_WIND_ROOT_PATH + "NI/"  + datetime +"." + timelimit + ".png";
 			
 			if (new File(path).exists()) {
 				return path;

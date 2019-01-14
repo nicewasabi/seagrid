@@ -79,12 +79,12 @@ public class Section7DaysController {
 	}
 	
 	@RequestMapping("/showImage.do")
-	public void showImage(String datetime, String timelimit, String featuretype, HttpServletResponse response){
+	public void showImage(String datetime, String hour, String location, HttpServletResponse response){
 		response.setContentType("multipart/form-data");
 		
 		try {
 			// 获取对应日期时间的图片所在路径
-			String path = SeaFogFeatureUtil.getSeaFogSection7DaysImagePath(datetime, timelimit, featuretype);
+			String path = SeaFogFeatureUtil.getSeaFogSection7DaysImagePath(datetime, hour, location);
 			
 			if (path != null) {
 				// 将指定路径下的图片输出到页面
