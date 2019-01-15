@@ -5,6 +5,6 @@
 	</head>
 	<body>	
 		<!-- 跳转至首页 -->
-		<jsp:forward page="/meanWind/main.do" />
+		<jsp:forward page="/objectiveMethodProduct/huananSeaFog/main.do" />
 	</body>
 </html>
