@@ -4,6 +4,7 @@
 	<head>
 		<title>海洋气象精细化格点预报</title>
 		<style type="text/css">
+			
 			.border_condition_main {font-size:12px;text-align:left;padding:0px 0px 17px 10px;display:block;width: 100%;}
 			.div_border {border:1px solid #ccc;display:inline-block;padding: 3px 2px;}
 			select {height:25px;width:60px;margin:0}
@@ -58,8 +59,8 @@
 						</select>
 						<input id="subTimelimitBtn" type="button" value="&lt;&lt;" class="easyui-linkbutton btn"/>
 						<input id="addTimelimitBtn" type="button" value="&gt;&gt;" class="easyui-linkbutton btn"/>
-						&nbsp;
-						<select id="featuretype" style="width:90px;" >
+						<!-- &nbsp;
+						<select id="featuretype" style="width:130px;" >
 						   <option value="Vis">VIS</option>	
 						   <option value="2mRH">2mRH</option>	
 						   <option value="1000hPaRH">1000hPaRH</option>	
@@ -67,9 +68,20 @@
 						   <option value="T925hPa-T1000hPa">T925-T1000hPa</option>	
 						   <option value="T1000hPa-T2m">T1000hPa-T2m</option>			
 						</select>
-						&nbsp;
-						<input id="drawBtn" type="button" value="查询" class="easyui-linkbutton btn"/>
-					</div>
+						
+						&nbsp; -->
+<!-- 						<input id="drawBtn" type="button" value="查询" class="easyui-linkbutton btn"/>
+ -->					</div>
+ 
+ 					<div class="border_condition_main">
+ 					要素名称
+							<input type="radio" name="featuretype" value="Vis" checked/>VIS
+							<input type="radio" name="featuretype" value="2mRH"/>2mRH
+							<input type="radio" name="featuretype" value="1000hPaRH"/>1000hPaRH
+							<input type="radio" name="featuretype" value="T2m-Ts"/>T2m-Ts
+							<input type="radio" name="featuretype" value="T925hPa-T1000hPa"/>T925-T1000hPa
+							<input type="radio" name="featuretype" value="T1000hPa-T2m"/>T1000hPa-T2m				
+ 					</div>
 					<div style="height:654px;border:1px solid gray;">
 						<table style="width:100%;height:100%">
 							<tr>
@@ -109,6 +121,7 @@
 		var timelimit = $("#timelimit").val();
 		$("#timeStart").val(datetime);
 		$("#datetime").val(datetime);
+		
 		
 		// 初始化绘制图像
 		showImage(datetime + "12", "000", "Vis");
@@ -167,7 +180,7 @@
 		});
 		
 		// 切换产品绘图
-		$("input[name=windType]").change(function(){
+		$("input[name=featuretype]").change(function(){
 			showImageProcess();
 		});
 		
@@ -178,7 +191,8 @@
 			datetime = datetime + hour;
 			var timelimit = $("#timelimit").val();
 			// 产品类型
-			var featuretype = $("#featuretype option:selected").val();
+		/* 	var featuretype = $("#featuretype option:selected").val(); */
+		    var featuretype = $("input[name=featuretype]:checked").val();
 			showImage(datetime, timelimit, featuretype);
 		}
 		

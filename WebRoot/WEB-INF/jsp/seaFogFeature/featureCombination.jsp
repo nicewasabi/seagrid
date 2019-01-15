@@ -58,10 +58,10 @@
 								<option><fmt:formatNumber pattern="000" value="${hour.index}"></fmt:formatNumber></option>
 							</c:forEach>
 						</select>
-						&nbsp;
+						<!-- &nbsp;
 						
 						要素：
-						<select id="feature">
+						<select id="feature" style="width:150px;">
 						   <option value="rh2m_wind10">rh2m_wind10m</option>	
 						   <option value="rh1000_wind10">RH1000_wind10m</option>	
 						   <option value="rh950_wind">RH950_wind</option>	
@@ -74,8 +74,21 @@
 						   <option value="t925_t1000">T925-t1000</option>	
 						   <option value="sst">sst</option>	
 						</select>
-						<input id="drawBtn" type="button" value="查询" class="easyui-linkbutton btn"/>
+						<input id="drawBtn" type="button" value="查询" class="easyui-linkbutton btn"/> -->
 					</div>
+					<div class="border_condition_main">
+ 					要素名称：
+							<input type="radio" name="feature" value="rh2m_wind10" checked/>rh2m_wind10m
+							<input type="radio" name="feature" value="rh1000_wind10"/>RH1000_wind10m
+							<input type="radio" name="feature" value="rh950_wind"/>RH950_wind
+							<input type="radio" name="feature" value="rh925_wind"/>RH925_wind
+							<input type="radio" name="feature" value="rh850_wind"/>RH850_wind
+							<input type="radio" name="feature" value="td_sst"/>Td-sst			
+							<input type="radio" name="feature" value="ta_sst"/>Ta-sst		
+							<input type="radio" name="feature" value="t1000_t2m"/>T1000-t2m		
+							<input type="radio" name="feature" value="t925_t1000"/>925-t1000		
+							<input type="radio" name="feature" value="sst"/>sst			
+ 					</div>
 					<div style="height:654px;border:1px solid gray;">
 						<table style="width:100%;height:100%">
 							<tr>
@@ -171,7 +184,7 @@
 		});
 		
 		// 切换产品绘图
-		$("input[name=windType]").change(function(){
+		$("input[name=feature]").change(function(){
 			showImageProcess();
 		});
 		
@@ -182,8 +195,10 @@
 			datetime = datetime + hour;
 			var timelimit = $("#timelimit").val();
 			// 产品类型
-			var feature = $("#feature option:selected").val();
-			showImage(datetime, timelimit, feature);
+/* 			var feature = $("#feature option:selected").val();
+ */			
+ 			var feature = $("input[name=feature]:checked").val();
+ 			showImage(datetime, timelimit, feature);
 		}
 		
 		// 显示图像

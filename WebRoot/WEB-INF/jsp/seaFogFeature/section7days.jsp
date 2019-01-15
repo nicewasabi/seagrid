@@ -51,9 +51,9 @@
 						</select>
 						<input id="subDatetimeBtn" type="button" value="&lt;&lt;" class="easyui-linkbutton btn"/>
 						<input id="addDatetimeBtn" type="button" value="&gt;&gt;" class="easyui-linkbutton btn"/>
-						&nbsp;
+			<!-- 			&nbsp;
 				
-						<select id="location">
+						<select id="location" style="width:72px;">
 						   <option value="qingdao">青岛</option>	
 						   <option value="dalian">大连</option>	
 						   <option value="tianjin">天津</option>	
@@ -68,8 +68,22 @@
 						   <option value="fuzhou">福州</option>			
 						</select>
 						&nbsp;
-						<input id="drawBtn" type="button" value="查询" class="easyui-linkbutton btn"/>
+						<input id="drawBtn" type="button" value="查询" class="easyui-linkbutton btn"/> -->
 					</div>
+					<div class="border_condition_main">
+ 					站点名称：
+							<input type="radio" name="location" value="qingdao" checked/>青岛
+							<input type="radio" name="location" value="dalian"/>大连
+							<input type="radio" name="location" value="tianjin"/>天津
+							<input type="radio" name="location" value="xuwen"/>徐闻
+							<input type="radio" name="location" value="haikou"/>海口
+							<input type="radio" name="location" value="weizhoudao"/>涠洲岛			
+							<input type="radio" name="location" value="yantai"/>烟台			
+							<input type="radio" name="location" value="shanghai"/>上海			
+							<input type="radio" name="location" value="zhoushan"/>舟山			
+							<input type="radio" name="location" value="ningbo"/>宁波			
+							<input type="radio" name="location" value="fuzhou"/>福州		
+ 					</div>
 					<div style="height:654px;border:1px solid gray;">
 						<table style="width:100%;height:100%">
 							<tr>
@@ -165,7 +179,7 @@
 		});
 		
 		// 切换产品绘图
-		$("input[name=windType]").change(function(){
+		$("input[name=location]").change(function(){
 			showImageProcess();
 		});
 		
@@ -173,11 +187,12 @@
 		function showImageProcess() {
 			var datetime = $("#datetime").val();
 			var hour = $("#hour").val();
-			datetime = datetime + hour;
-			var timelimit = $("#timelimit").val();
+			
 			// 产品类型
-			var featuretype = $("#featuretype option:selected").val();
-			showImage(datetime, timelimit, featuretype);
+/* 			var featuretype = $("#featuretype option:selected").val();
+ */			
+            var location = $("input[name=location]:checked").val();
+			showImage(datetime, hour, location);
 		}
 		
 		// 显示图像
