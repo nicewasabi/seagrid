@@ -37,7 +37,7 @@
 					<ol class="breadcrumb" style="margin-top: 10px;margin-left: 10px;background-color: white;width: 40%;">
 					  	<li><a href="${ctx}">首页/</a></li>
 					  	<li><a href="javascript:void(0)">海雾反演产品/</a></li>
-					  	<li class="active">近海海雾反演</li>
+					  	<li class="active">一带一路海域雾顶高度反演</li>
 					</ol>
 					<hr style="width:100%">
 					
@@ -98,7 +98,7 @@
 	</body>
 	<script type="text/javascript">
 		// 添加菜单栏选中标记
-		$("#801").addClass("selectedTitle");
+		$("#804").addClass("selectedTitle");
 		// 初始化起报时间
 		var date = new Date();//获得当前的北京时间
 		var datetime = getFormatDate(new Date(date.getTime()), "yyyyMMdd");
@@ -110,6 +110,7 @@
 		
 		// 绘制图像
 		$("#drawBtn").click(function() {
+			getMinutesListProcess();
 			showImageProcess();
 		});
 		
@@ -178,7 +179,7 @@
 		
 		// 显示图像
 		function showImage(datetime, hour, step,minute) {
-			$.post("${ctx}/seaFogInversion/offshore/validImage.do", {datetime:datetime, hour:hour, step:step,minute:minute}, function(data){
+			$.post("${ctx}/seaFogInversion/ydylRoofHeight/validImage.do", {datetime:datetime, hour:hour, step:step,minute:minute}, function(data){
 				// 清空内容
 				$("#imgDiv").html();
 				if(data == false){
@@ -186,7 +187,7 @@
 				}else{
 					$("#imgDiv").html("<img id='img' src='' style='width:100%;height:100%;border: 1px solid gray;' />");
 					var img = $("#img");
-					var url = "${ctx}/seaFogInversion/offshore/showImage.do?datetime=" + datetime + "&hour=" + hour + "&step=" + step+"&minute=" + minute ;
+					var url = "${ctx}/seaFogInversion/ydylRoofHeight/showImage.do?datetime=" + datetime + "&hour=" + hour + "&step=" + step+"&minute=" + minute ;
 					img.attr("src", url);
 				}
 			});
@@ -203,7 +204,7 @@
 		//动态加载分钟
 		function getMinutesList(datetime, hour,step) {
 			
-			$.post("${ctx}/seaFogInversion/offshore/getMinutesList.do", {datetime:datetime, hour:hour,step:step}, function(data){		
+			$.post("${ctx}/seaFogInversion/ydylRoofHeight/getMinutesList.do", {datetime:datetime, hour:hour,step:step}, function(data){		
 				if(data!=null){
 					$("#selectMinutes").empty();
 /* 					$("#selectMinutes").prepend("<option value='0'>请选择</option>");

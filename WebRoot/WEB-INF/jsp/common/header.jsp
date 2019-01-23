@@ -37,7 +37,7 @@
 			<td class="shugang">|</td>
 			
 			<td class="link"  style="width: 160px;">
-				<a style="color: white;text-decoration: none;"  href="${ctx}${childPermission.url}/np/determineForecastMain.do">海雾反演产品</a>
+				<a style="color: white;text-decoration: none;"  href="${ctx}${childPermission.url}/seaFogInversion/offshore/main.do">海雾反演产品</a>
 			</td>
 			<td class="shugang">|</td>
 			

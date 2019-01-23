@@ -24,7 +24,6 @@ package com.webyun.seagrid.seaFogInversion.controller;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collections;
 
 import javax.servlet.http.HttpServletResponse;
 
@@ -50,13 +49,13 @@ import com.webyun.seagrid.seaFogInversion.util.SeaFogOffshoreUtil;
  *        /seaFogFeature/featureCombination/mian.do
  */
 @Controller
-@RequestMapping("/seaFogInversion/offshore")
-public class SeaFogOffshoreController {
-	private Logger log = Logger.getLogger(SeaFogOffshoreController.class);
+@RequestMapping("/seaFogInversion/roofHeight")
+public class SeaFogRoofHeightController {
+	private Logger log = Logger.getLogger(SeaFogRoofHeightController.class);
 
 	@RequestMapping("/main.do")
 	public String toMain() {
-		return "/seaFogInversion/seaFogInversionOffshore";
+		return "/seaFogInversion/seaFogInversionRoofHeight";
 	}
 
 	@RequestMapping("/validImage.do")
@@ -105,7 +104,6 @@ public class SeaFogOffshoreController {
 				for (int i = 0; i < filenamelist.size(); i++) {
 					minuteslist.add(filenamelist.get(i).split("_")[2].substring(2));
 				}
-				 Collections.sort(minuteslist);
 				return minuteslist;
 			}
 		} catch (Exception e) {

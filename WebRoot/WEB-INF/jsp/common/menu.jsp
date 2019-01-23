@@ -1,15 +1,15 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <script type="text/javascript">
 	/**
 	 * 显示隐藏
 	 */
-	function showHide(menu_id, menu_image){
+	function showHide(menu_id, menu_image) {
 		$("#" + menu_id).toggle();
 		var src = $('#' + menu_image).attr("src");
-		
-		if(src == "${ctx }/static/images/up.png") {
+
+		if (src == "${ctx }/static/images/up.png") {
 			$('#' + menu_image).attr("src", "${ctx}/static/images/down.png");
 		} else {
 			$('#' + menu_image).attr("src", "${ctx}/static/images/up.png");
@@ -32,8 +32,8 @@
 	  <li><a href="#">JMA模式检验</a></li>
 	   <li><a href="/seaGrid/monitor/fileMonitor.do">文件监控</a></li>
 	</ul> -->
-	
-<!-- 	<div class="menu_level_1" onclick="showHide('menu_id_2','menu_image_2')" style="margin: 1px 0px;background-color: #3399FF;">
+
+	<!-- 	<div class="menu_level_1" onclick="showHide('menu_id_2','menu_image_2')" style="margin: 1px 0px;background-color: #3399FF;">
 		风场订正&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		<img alt="箭头" id="menu_image_2" src="/seaGrid/static/images/up.png">
 	</div>
@@ -53,59 +53,99 @@
 	 -->
 
 
-	<div class="menu_level_1" onclick="showHide('menu_id_5','menu_image_5')" style="margin: 1px 0px;background-color: #3399FF;">
-		客观方法产品
-		<img alt="箭头" id="menu_image_5" src="/seaGrid/static/images/up.png">
+	<div class="menu_level_1"
+		onclick="showHide('menu_id_5','menu_image_5')"
+		style="margin: 1px 0px; background-color: #3399FF;">
+		客观方法产品 <img alt="箭头" id="menu_image_5"
+			src="/seaGrid/static/images/up.png">
 	</div>
 	<div id="menu_id_5">
-		<div class="menu_level_2" id="501" style="text-align: left;padding-left: 50px;" onclick="changeTab('/seaGrid/objectiveMethodProduct/huananSeaFog/main.do')">华南海雾</div>									
+		<div class="menu_level_2" id="501"
+			style="text-align: left; padding-left: 50px;"
+			onclick="changeTab('/seaGrid/objectiveMethodProduct/huananSeaFog/main.do')">华南海雾</div>
 	</div>
-	
-	
-	<div class="menu_level_1" onclick="showHide('menu_id_6','menu_image_6')" style="margin: 1px 0px;background-color: #3399FF;">
-		海雾要素
-		<img alt="箭头" id="menu_image_6" src="/seaGrid/static/images/up.png">
+
+
+	<div class="menu_level_1"
+		onclick="showHide('menu_id_6','menu_image_6')"
+		style="margin: 1px 0px; background-color: #3399FF;">
+		海雾要素 <img alt="箭头" id="menu_image_6"
+			src="/seaGrid/static/images/up.png">
 	</div>
 	<div id="menu_id_6">
-		<div class="menu_level_2" id="601" style="text-align: left;padding-left: 50px;" onclick="changeTab('/seaGrid/seaFogFeature/section3days/main.do')">未来3天站点预报</div>									
-		<div class="menu_level_2" id="602" style="text-align: left;padding-left: 50px;" onclick="changeTab('/seaGrid/seaFogFeature/section7days/main.do')">未来7天站点预报</div>			
-		<div class="menu_level_2" id="603" style="text-align: left;padding-left: 50px;" onclick="changeTab('/seaGrid/seaFogFeature/featureCombination/main.do')">要素组合预报</div>							
+		<div class="menu_level_2" id="601"
+			style="text-align: left; padding-left: 50px;"
+			onclick="changeTab('/seaGrid/seaFogFeature/section3days/main.do')">未来3天站点预报</div>
+		<div class="menu_level_2" id="602"
+			style="text-align: left; padding-left: 50px;"
+			onclick="changeTab('/seaGrid/seaFogFeature/section7days/main.do')">未来7天站点预报</div>
+		<div class="menu_level_2" id="603"
+			style="text-align: left; padding-left: 50px;"
+			onclick="changeTab('/seaGrid/seaFogFeature/featureCombination/main.do')">要素组合预报</div>
 	</div>
-	
-		
-	<div class="menu_level_1" onclick="showHide('menu_id_4','menu_image_4')" style="margin: 1px 0px;background-color: #3399FF;">
-		8级大风确定性预报
-		<img alt="箭头" id="menu_image_4" src="/seaGrid/static/images/up.png">
+
+
+	<div class="menu_level_1"
+		onclick="showHide('menu_id_4','menu_image_4')"
+		style="margin: 1px 0px; background-color: #3399FF;">
+		8级大风确定性预报 <img alt="箭头" id="menu_image_4"
+			src="/seaGrid/static/images/up.png">
 	</div>
 	<div id="menu_id_4">
-		<div class="menu_level_2" id="401" style="text-align: left;padding-left: 50px;" onclick="changeTab('/seaGrid/np/determineForecastMain.do')">北太平洋</div>									
-		<div class="menu_level_2" id="402" style="text-align: left;padding-left: 50px;" onclick="changeTab('/seaGrid/ni/determineForecastMain.do')">北印度洋</div>									
+		<div class="menu_level_2" id="401"
+			style="text-align: left; padding-left: 50px;"
+			onclick="changeTab('/seaGrid/np/determineForecastMain.do')">北太平洋</div>
+		<div class="menu_level_2" id="402"
+			style="text-align: left; padding-left: 50px;"
+			onclick="changeTab('/seaGrid/ni/determineForecastMain.do')">北印度洋</div>
 	</div>
-	
-	
-	<div class="menu_level_1" onclick="showHide('menu_id_8','menu_image_8')" style="margin: 1px 0px;background-color: #3399FF;">
-		海雾反演产品
-		<img alt="箭头" id="menu_image_4" src="/seaGrid/static/images/up.png">
+
+
+	<div class="menu_level_1"
+		onclick="showHide('menu_id_8','menu_image_8')"
+		style="margin: 1px 0px; background-color: #3399FF;">
+		海雾反演产品 <img alt="箭头" id="menu_image_8"
+			src="/seaGrid/static/images/up.png">
 	</div>
 	<div id="menu_id_8">
-		<div class="menu_level_2" id="801" style="text-align: left;padding-left: 50px;" onclick="changeTab('/seaGrid/seaFogInversion/offshore/main.do')">近海海雾反演</div>									
-		<div class="menu_level_2" id="802" style="text-align: left;padding-left: 50px;" onclick="changeTab('/seaGrid/ni/determineForecastMain.do')">近海雾顶高度反演</div>	
-		<div class="menu_level_2" id="803" style="text-align: left;padding-left: 50px;" onclick="changeTab('/seaGrid/ni/determineForecastMain.do')">一带一路海域海雾反演</div>									
-		<div class="menu_level_2" id="804" style="text-align: left;padding-left: 50px;" onclick="changeTab('/seaGrid/ni/determineForecastMain.do')">一带一路海域雾顶高度反演</div>																							
+		<div class="menu_level_2" id="801"
+			style="text-align: left; padding-left: 50px;"
+			onclick="changeTab('/seaGrid/seaFogInversion/offshore/main.do')">近海海雾反演</div>
+		<div class="menu_level_2" id="802"
+			style="text-align: left; padding-left: 50px;"
+			onclick="changeTab('/seaGrid/seaFogInversion/roofHeight/main.do')">近海雾顶高度反演</div>
+		<div class="menu_level_2" id="803"
+			style="text-align: left; padding-left: 30px;"
+			onclick="changeTab('/seaGrid/seaFogInversion/ydyl/main.do')">一带一路海域海雾反演</div>
+		<div class="menu_level_2" id="804"
+			style="text-align: left; padding-left: 30px;"
+			onclick="changeTab('/seaGrid/seaFogInversion/ydylRoofHeight/main.do')">一带一路海域雾顶高度反演</div>
 	</div>
-	
 
-	<div class="menu_level_1" onclick="showHide('menu_id_7','menu_image_7')" style="margin: 1px 0px;background-color: #3399FF;">
-		网站链接
-		<img alt="箭头" id="menu_image_7" src="/seaGrid/static/images/up.png">
+
+	<div class="menu_level_1"
+		onclick="showHide('menu_id_7','menu_image_7')"
+		style="margin: 1px 0px; background-color: #3399FF;">
+		网站链接 <img alt="箭头" id="menu_image_7"
+			src="/seaGrid/static/images/up.png">
 	</div>
 	<div id="menu_id_7">
-		<div class="menu_level_2" id="701" style="text-align: left;padding-left: 50px;"><a href="http://web.kma.go.kr/chn/weather/images/satellite.jsp" target="	
-_blank" style="text-decoration:none" >韩国气象厅卫星反演</a></div>									
+		<div class="menu_level_2" id="701"
+			style="text-align: left; padding-left: 50px;">
+			<a href="http://web.kma.go.kr/chn/weather/images/satellite.jsp"
+				target="_blank" style="text-decoration: none">韩国气象厅卫星反演</a>
+		</div>
+
+
+		<div class="menu_level_2" id="702"
+			style="text-align: left; padding-left: 50px;">
+			<a href="http://222.195.136.24/forecast.html"
+				target="_blank" style="text-decoration: none">海大海雾产品</a>
+		</div>
 	</div>
 
 
-<!-- 	<div class="menu_level_1" onclick="showHide('menu_id_1','menu_image_1')" style="margin: 1px 0px;background-color: #3399FF;">
+	<!-- 	<div class="menu_level_1" onclick="showHide('menu_id_1','menu_image_1')" style="margin: 1px 0px;background-color: #3399FF;">
 		系统管理&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		<img alt="箭头" id="menu_image_1" src="/seaGrid/static/images/up.png">
 	</div>
@@ -114,5 +154,5 @@ _blank" style="text-decoration:none" >韩国气象厅卫星反演</a></div>
 		<div class="menu_level_2" id="103" style="text-align: left;padding-left: 50px;" onclick="changeTab('/seaGrid/fileParseLog/fileMonitor.do')">数据监控</div>
 		<div class="menu_level_2" id="104" style="text-align: left;padding-left: 50px;" onclick="changeTab('/seaGrid/computer/manage.do')">系统监控</div>					
 	</div> -->
-	
+
 </div>
