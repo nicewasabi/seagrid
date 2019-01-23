@@ -35,6 +35,12 @@
 				<a style="color: white;text-decoration: none;"  href="${ctx}${childPermission.url}/np/determineForecastMain.do">8级大风确定性预报</a>
 			</td>
 			<td class="shugang">|</td>
+			
+			<td class="link"  style="width: 160px;">
+				<a style="color: white;text-decoration: none;"  href="${ctx}${childPermission.url}/np/determineForecastMain.do">海雾反演产品</a>
+			</td>
+			<td class="shugang">|</td>
+			
 			<td class="link" >
 				<a style="color: white;text-decoration: none;"  href="http://web.kma.go.kr/chn/weather/images/satellite.jsp">网站链接</a>
 			</td>

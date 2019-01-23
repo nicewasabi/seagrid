@@ -82,6 +82,18 @@
 		<div class="menu_level_2" id="402" style="text-align: left;padding-left: 50px;" onclick="changeTab('/seaGrid/ni/determineForecastMain.do')">北印度洋</div>									
 	</div>
 	
+	
+	<div class="menu_level_1" onclick="showHide('menu_id_8','menu_image_8')" style="margin: 1px 0px;background-color: #3399FF;">
+		海雾反演产品
+		<img alt="箭头" id="menu_image_4" src="/seaGrid/static/images/up.png">
+	</div>
+	<div id="menu_id_8">
+		<div class="menu_level_2" id="801" style="text-align: left;padding-left: 50px;" onclick="changeTab('/seaGrid/seaFogInversion/regc/main.do')">近海海雾反演</div>									
+		<div class="menu_level_2" id="802" style="text-align: left;padding-left: 50px;" onclick="changeTab('/seaGrid/ni/determineForecastMain.do')">近海雾顶高度反演</div>	
+		<div class="menu_level_2" id="803" style="text-align: left;padding-left: 50px;" onclick="changeTab('/seaGrid/ni/determineForecastMain.do')">一带一路海域海雾反演</div>									
+		<div class="menu_level_2" id="804" style="text-align: left;padding-left: 50px;" onclick="changeTab('/seaGrid/ni/determineForecastMain.do')">一带一路海域雾顶高度反演</div>																							
+	</div>
+	
 
 	<div class="menu_level_1" onclick="showHide('menu_id_7','menu_image_7')" style="margin: 1px 0px;background-color: #3399FF;">
 		网站链接
