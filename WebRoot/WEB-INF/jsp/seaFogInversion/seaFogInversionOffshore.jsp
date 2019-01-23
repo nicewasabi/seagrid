@@ -44,27 +44,26 @@
 					<div class="border_condition_main">
 						起报日期：
 						<input class="Wdate" id="datetime" type="text" style="width:90px;max-width:90px;height:25px;margin:0" onfocus="WdatePicker({skin:'twoer', dateFmt:'yyyyMMdd',autoPickDate: true});"/>
-						时间间隔：
+						&nbsp;时间间隔(分钟)：
 						<select id="step">
-						    <option value="05">5分钟</option>
-							<option value="15">15分钟</option>
+						    <option value="05">05</option>
+							<option value="15">15</option>
 						</select>
-						小时：
+						&nbsp;小时：
 						<select id="hour">
 									<c:forEach begin="0" end="23" step="1" varStatus="hourVar">
 										<option><fmt:formatNumber pattern="00" value="${hourVar.index}"></fmt:formatNumber></option>
 									</c:forEach>
 								</select>
-						分钟：
-						　<select id="selectMinutes">
-						    <option value='0'>请选择</option> 　　　  					
+						&nbsp;分钟：
+						　<select id="selectMinutes">　  					
 　　						 </select> 
 						
 								
-						<input id="subDatetimeBtn" type="button" value="&lt;&lt;" class="easyui-linkbutton btn"/>
+						<!-- <input id="subDatetimeBtn" type="button" value="&lt;&lt;" class="easyui-linkbutton btn"/>
 						<input id="addDatetimeBtn" type="button" value="&gt;&gt;" class="easyui-linkbutton btn"/>
 						<input id="subTimelimitBtn" type="button" value="&lt;&lt;" class="easyui-linkbutton btn"/>
-						<input id="addTimelimitBtn" type="button" value="&gt;&gt;" class="easyui-linkbutton btn"/>
+						<input id="addTimelimitBtn" type="button" value="&gt;&gt;" class="easyui-linkbutton btn"/> -->
 					</div>
  			
  	
@@ -125,8 +124,8 @@
 			getMinutesListProcess();
 		});
 		// 切换时效重新绘图
-		$("#timelimit").change(function() {
-			getMinutesList()
+		$("#selectMinutes").change(function() {
+			showImageProcess();
 		});
 		
 		// 起始日期往前推
@@ -166,23 +165,18 @@
 			getSelectNextOption("timelimit");
 			showImageProcess();
 		});
-		
-
-	
-		
 		// 图像绘制展示处理
 		function showImageProcess() {
 			var datetime = $("#datetime").val();
 			var hour = $("#hour").val();
-			// 地点
-/* 			var location = $("#location option:selected").val();
- */			  var location = $("input[name=location]:checked").val();
-			showImage(datetime, hour, location);
+			var step = $("#step").val();
+			var minute = $("#selectMinutes").val();
+			showImage(datetime, hour, step,minute);
 		}
 		
 		// 显示图像
 		function showImage(datetime, hour, step,minute) {
-			$.post("${ctx}/seaFogInversion/regc/validImage.do", {datetime:datetime, hour:hour, step:step,minute:minute}, function(data){
+			$.post("${ctx}/seaFogInversion/offshore/validImage.do", {datetime:datetime, hour:hour, step:step,minute:minute}, function(data){
 				// 清空内容
 				$("#imgDiv").html();
 				if(data == false){
@@ -190,7 +184,7 @@
 				}else{
 					$("#imgDiv").html("<img id='img' src='' style='width:100%;height:100%;border: 1px solid gray;' />");
 					var img = $("#img");
-					var url = "${ctx}/seaFogInversion/regc/showImage.do?datetime=" + datetime + "&hour=" + hour + "&location=" + location;
+					var url = "${ctx}/seaFogInversion/offshore/showImage.do?datetime=" + datetime + "&hour=" + hour + "&step=" + step+"&minute=" + minute ;
 					img.attr("src", url);
 				}
 			});
@@ -200,21 +194,18 @@
 		function getMinutesListProcess() {
 			var datetime = $("#datetime").val();
 			var step = $("#step").val();
-			var hour = $("#hour").val();
-			// 地点
-/* 			var location = $("#location option:selected").val();
- */			 
+			var hour = $("#hour").val();		 
  			getMinutesList(datetime, hour, step);
 		}
 		
 		//动态加载分钟
 		function getMinutesList(datetime, hour,step) {
-			$.post("${ctx}/seaFogInversion/regc/getMinutesList.do", {datetime:datetime, hour:hour,step:step}, function(data){
 			
-				$("#selectMinutes").html();
+			$.post("${ctx}/seaFogInversion/offshore/getMinutesList.do", {datetime:datetime, hour:hour,step:step}, function(data){		
 				if(data!=null){
-					$("#selectMinutes").prepend("<option value='0'>请选择</option>");
-				　　　　for (var i = 0; i < data.length; i++) {
+					$("#selectMinutes").empty();
+/* 					$("#selectMinutes").prepend("<option value='0'>请选择</option>");
+ */				  for (var i = 0; i < data.length; i++) {
 					$("#selectMinutes").append("<option value='"+data[i]+"'>"+data[i]+"</option>");
  			}
 			}});

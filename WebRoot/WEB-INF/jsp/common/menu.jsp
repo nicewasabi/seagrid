@@ -88,7 +88,7 @@
 		<img alt="箭头" id="menu_image_4" src="/seaGrid/static/images/up.png">
 	</div>
 	<div id="menu_id_8">
-		<div class="menu_level_2" id="801" style="text-align: left;padding-left: 50px;" onclick="changeTab('/seaGrid/seaFogInversion/regc/main.do')">近海海雾反演</div>									
+		<div class="menu_level_2" id="801" style="text-align: left;padding-left: 50px;" onclick="changeTab('/seaGrid/seaFogInversion/offshore/main.do')">近海海雾反演</div>									
 		<div class="menu_level_2" id="802" style="text-align: left;padding-left: 50px;" onclick="changeTab('/seaGrid/ni/determineForecastMain.do')">近海雾顶高度反演</div>	
 		<div class="menu_level_2" id="803" style="text-align: left;padding-left: 50px;" onclick="changeTab('/seaGrid/ni/determineForecastMain.do')">一带一路海域海雾反演</div>									
 		<div class="menu_level_2" id="804" style="text-align: left;padding-left: 50px;" onclick="changeTab('/seaGrid/ni/determineForecastMain.do')">一带一路海域雾顶高度反演</div>																							
@@ -105,14 +105,14 @@ _blank" style="text-decoration:none" >韩国气象厅卫星反演</a></div>
 	</div>
 
 
-	<div class="menu_level_1" onclick="showHide('menu_id_1','menu_image_1')" style="margin: 1px 0px;background-color: #3399FF;">
+<!-- 	<div class="menu_level_1" onclick="showHide('menu_id_1','menu_image_1')" style="margin: 1px 0px;background-color: #3399FF;">
 		系统管理&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		<img alt="箭头" id="menu_image_1" src="/seaGrid/static/images/up.png">
 	</div>
 	<div id="menu_id_1">
 		<div class="menu_level_2" id="101" style="text-align: left;padding-left: 50px;" onclick="changeTab('/seaGrid/monitor/fileMonitor.do')">文件监控</div>									
 		<div class="menu_level_2" id="103" style="text-align: left;padding-left: 50px;" onclick="changeTab('/seaGrid/fileParseLog/fileMonitor.do')">数据监控</div>
-<!-- 		<div class="menu_level_2" id="104" style="text-align: left;padding-left: 50px;" onclick="changeTab('/seaGrid/computer/manage.do')">系统监控</div>					
- -->	</div>
+		<div class="menu_level_2" id="104" style="text-align: left;padding-left: 50px;" onclick="changeTab('/seaGrid/computer/manage.do')">系统监控</div>					
+	</div> -->
 	
 </div>

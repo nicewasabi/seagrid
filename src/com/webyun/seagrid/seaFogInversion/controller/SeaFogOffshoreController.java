@@ -19,7 +19,7 @@
  * @version: V1.0  
 
  */
-package com.webyun.seagrid.seaFogInversion;
+package com.webyun.seagrid.seaFogInversion.controller;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -34,7 +34,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.webyun.seagrid.common.util.FileOperationUtil;
 import com.webyun.seagrid.seaFogFeature.util.SeaFogFeatureUtil;
-import com.webyun.seagrid.seaFogInversion.util.SeaFogRegcUtil;
+import com.webyun.seagrid.seaFogInversion.util.SeaFogOffshoreUtil;
 
 /**
  * 
@@ -49,21 +49,21 @@ import com.webyun.seagrid.seaFogInversion.util.SeaFogRegcUtil;
  *        /seaFogFeature/featureCombination/mian.do
  */
 @Controller
-@RequestMapping("/seaFogInversion/regc")
-public class SeaFogRegcController {
-	private Logger log = Logger.getLogger(SeaFogRegcController.class);
+@RequestMapping("/seaFogInversion/offshore")
+public class SeaFogOffshoreController {
+	private Logger log = Logger.getLogger(SeaFogOffshoreController.class);
 
 	@RequestMapping("/main.do")
 	public String toMain() {
-		return "/seaFogInversion/seaFogInversionRegc";
+		return "/seaFogInversion/seaFogInversionOffshore";
 	}
 
 	@RequestMapping("/validImage.do")
 	@ResponseBody
-	public Boolean validImage(String datetime, String timelimit, String feature, HttpServletResponse response) {
+	public Boolean validImage(String datetime, String hour, String step, String minute, HttpServletResponse response) {
 		try {
 			// 获取对应日期时间的图片所在路径
-			String path = SeaFogFeatureUtil.getFeatureCombinationImagePath(datetime, timelimit, feature);
+			String path = SeaFogOffshoreUtil.getImagePath(datetime, hour, step, minute);
 
 			if (path != null) {
 				return true;
@@ -76,12 +76,12 @@ public class SeaFogRegcController {
 	}
 
 	@RequestMapping("/showImage.do")
-	public void showImage(String datetime, String timelimit, String feature, HttpServletResponse response) {
+	public void showImage(String datetime, String hour, String step, String minute, HttpServletResponse response) {
 		response.setContentType("multipart/form-data");
 
 		try {
 			// 获取对应日期时间的图片所在路径
-			String path = SeaFogFeatureUtil.getFeatureCombinationImagePath(datetime, timelimit, feature);
+			String path = SeaFogOffshoreUtil.getImagePath(datetime, hour, step, minute);
 
 			if (path != null) {
 				// 将指定路径下的图片输出到页面
@@ -95,12 +95,16 @@ public class SeaFogRegcController {
 
 	@RequestMapping("/getMinutesList.do")
 	@ResponseBody
-	public ArrayList<String> getMinutesList(String datetime, String hour, HttpServletResponse response) {
+	public ArrayList<String> getMinutesList(String datetime, String hour,String step, HttpServletResponse response) {
 		try {
 			// 获取对应日期时间的图片所在路径
-			ArrayList<String> path = SeaFogRegcUtil.getMinutesList(datetime, hour);
-			if (path != null) {
-				return path;
+			ArrayList<String> filenamelist = SeaFogOffshoreUtil.getMinutesList(datetime, hour,step);
+			ArrayList<String> minuteslist = new ArrayList<String>();
+			if (filenamelist != null) {
+				for (int i = 0; i < filenamelist.size(); i++) {
+					minuteslist.add(filenamelist.get(i).split("_")[2].substring(2));
+				}
+				return minuteslist;
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
