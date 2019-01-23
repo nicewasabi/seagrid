@@ -206,6 +206,7 @@
 			$.post("${ctx}/seaFogInversion/ydyl/getMinutesList.do", {datetime:datetime, hour:hour,step:step}, function(data){		
 				if(data!=null){
 					$("#selectMinutes").empty();
+					$("#selectMinutes").prepend("<option value='0'>请选择</option>");
 /* 					$("#selectMinutes").prepend("<option value='0'>请选择</option>");
  */				  for (var i = 0; i < data.length; i++) {
 					$("#selectMinutes").append("<option value='"+data[i]+"'>"+data[i]+"</option>");
