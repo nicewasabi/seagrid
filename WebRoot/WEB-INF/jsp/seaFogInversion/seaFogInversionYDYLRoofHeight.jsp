@@ -6,7 +6,7 @@
 		<style type="text/css">
 			.border_condition_main {font-size:12px;text-align:left;padding:0px 0px 17px 10px;display:block;width: 100%;}
 			.div_border {border:1px solid #ccc;display:inline-block;padding: 3px 2px;}
-			select {height:25px;width:60px;margin:0}
+			select {height:25px;width:70px;margin:0}
 			input[type=button] {width:30px;height:25px;}
 			#drawBtn {width:45px;}
 			#showGraph {width:auto;height:700px;border-top: 1px solid gray}

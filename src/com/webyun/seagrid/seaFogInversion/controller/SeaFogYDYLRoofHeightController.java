@@ -24,6 +24,7 @@ package com.webyun.seagrid.seaFogInversion.controller;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 
 import javax.servlet.http.HttpServletResponse;
 
@@ -104,6 +105,7 @@ public class SeaFogYDYLRoofHeightController {
 				for (int i = 0; i < filenamelist.size(); i++) {
 					minuteslist.add(filenamelist.get(i).split("_")[2].substring(2));
 				}
+				Collections.sort(minuteslist);
 				return minuteslist;
 			}
 		} catch (Exception e) {

@@ -115,10 +115,10 @@
 			style="text-align: left; padding-left: 50px;"
 			onclick="changeTab('/seaGrid/seaFogInversion/roofHeight/main.do')">近海雾顶高度反演</div>
 		<div class="menu_level_2" id="803"
-			style="text-align: left; padding-left: 30px;"
+			style="text-align: left; padding-left: 40px;"
 			onclick="changeTab('/seaGrid/seaFogInversion/ydyl/main.do')">一带一路海域海雾反演</div>
 		<div class="menu_level_2" id="804"
-			style="text-align: left; padding-left: 30px;"
+			style="text-align: left; padding-left: 40px;"
 			onclick="changeTab('/seaGrid/seaFogInversion/ydylRoofHeight/main.do')">一带一路海域雾顶高度反演</div>
 	</div>
 
@@ -145,14 +145,14 @@
 	</div>
 
 
-	<!-- 	<div class="menu_level_1" onclick="showHide('menu_id_1','menu_image_1')" style="margin: 1px 0px;background-color: #3399FF;">
+	 	<div class="menu_level_1" onclick="showHide('menu_id_1','menu_image_1')" style="margin: 1px 0px;background-color: #3399FF;">
 		系统管理&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		<img alt="箭头" id="menu_image_1" src="/seaGrid/static/images/up.png">
 	</div>
 	<div id="menu_id_1">
 		<div class="menu_level_2" id="101" style="text-align: left;padding-left: 50px;" onclick="changeTab('/seaGrid/monitor/fileMonitor.do')">文件监控</div>									
 		<div class="menu_level_2" id="103" style="text-align: left;padding-left: 50px;" onclick="changeTab('/seaGrid/fileParseLog/fileMonitor.do')">数据监控</div>
-		<div class="menu_level_2" id="104" style="text-align: left;padding-left: 50px;" onclick="changeTab('/seaGrid/computer/manage.do')">系统监控</div>					
-	</div> -->
+<!-- 		<div class="menu_level_2" id="104" style="text-align: left;padding-left: 50px;" onclick="changeTab('/seaGrid/computer/manage.do')">系统监控</div>					
+ -->	</div> 
 
 </div>

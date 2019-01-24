@@ -20,7 +20,7 @@
 
 select {
 	height: 25px;
-	width: 60px;
+	width: 70px;
 	margin: 0
 }
 
